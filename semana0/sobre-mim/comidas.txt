@@ -1,0 +1,10 @@
+1-Café
+2-Pizza
+3-Comida Árabe	
+4-Comida Japonesa
+5-Lasanha
+6-Churrasco
+7-Salada Caesar
+8-Feijoada
+9-Açai
+10-Queijo

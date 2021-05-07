@@ -137,11 +137,10 @@ console.log(comparaNumeros)
 
 function boolNumero(numero) {
     const numeroPar = numero % 2 === 0
-    console.log(numeroPar)
     return numeroPar
 }
 
-const resultadoPar = boolNumero(25)
+const resultadoPar = boolNumero(5)
 console.log(resultadoPar)
 
 
@@ -149,3 +148,106 @@ console.log(resultadoPar)
 juntamente com uma versão dela em letras maiúsculas.
 
 */
+
+function fraseMaiuscula(texto) {
+   return texto.toUpperCase() 
+}
+
+const respostaFrase = fraseMaiuscula("cafe")
+console.log(respostaFrase, respostaFrase.length)
+
+/*
+3.Crie uma função para cada uma das operações básicas (soma, subtração, multiplicação e divisão). 
+Em seguida, peça para o usuário inserir dois números e chame essas 4 funções com esses valores inputados pelo usuário sendo o argumento. 
+Por fim, mostre no console o resultado das operações:
+
+Números inseridos: 30 e 3
+Soma: 33
+Diferença: 27
+Multiplicação: 90
+Divisão: 10
+*/
+
+//Soma
+
+function operacaoSoma(n1, n2) {
+    const opSoma = n1 + n2
+    return opSoma
+}
+const numeroDoUsuario1 = prompt("Insira um número") 
+const numeroDoUsuario2 = prompt("Insira outro número") 
+console.log("Números inseridos: " + numeroDoUsuario1 + " e " + numeroDoUsuario2)
+const resultTotal = operacaoSoma(Number(numeroDoUsuario1), Number(numeroDoUsuario2))
+console.log("Soma:", resultTotal)
+
+//Diferença
+
+function operacaoDiferenca(n1, n2) {
+    const opDiferenca = n1 - n2
+    return opDiferenca
+}
+
+const resultTotal2 = operacaoDiferenca(Number(numeroDoUsuario1), Number(numeroDoUsuario2))
+
+console.log("Diferença:", resultTotal2)
+
+
+//Multiplicação
+
+function operacaoMultiplicacao(n1, n2) {
+    const opMultiplicacao = n1 * n2
+    return opMultiplicacao
+}
+const resultTotal3 = operacaoMultiplicacao(Number(numeroDoUsuario1), Number(numeroDoUsuario2))
+console.log("Multiplicação: ", resultTotal3)
+
+//Divisão
+
+function operacaoDivisao(n1, n2) {
+    const opDivisao = n1 / n2
+    return opDivisao
+}
+const resultTotal4 = operacaoDivisao(Number(numeroDoUsuario1), Number(numeroDoUsuario2))
+console.log("Divisão: ", resultTotal4)
+
+//DESAFIO
+
+/*
+1. Funções são trechos de códigos como quaisquer outros mas que podemos acessá-los mais de uma vez ao longo 
+do código através de invocações/chamadas. Então, funções podem chamar/invocar outras funções também. 
+Sua tarefa é escrever duas funções:
+
+a) Escreva uma arrow function que recebe um parâmetro e imprime no console esse parâmetro
+*/
+
+const arrowFrase= (texto1) => {
+    return texto1
+}
+const fraseFinal = arrowFrase("Pipoca")
+console.log(fraseFinal)
+
+// /*
+// b) Escreva outra arrow function que recebe dois valores como parâmetros mas nenhum retorno. 
+// Faça a soma entre esses valores e chame a sua primeira função mandando este resultado da 
+// soma como entrada para imprimi-lo
+// */
+
+const arrowSomaDois = (n3, n4) => {
+    const arrowSoma = n3 + n4
+  
+}
+const resultArrowSoma = arrowSomaDois(2, 3) 
+
+console.log(arrowFrase(arrowSomaDois(2, 3)))
+
+/*
+2. Faça uma função que execute o teorema de Pitágoras, recebendo dois catetos e calculando o valor da hipotenusa. 
+Retorne este valor, invoque a função e imprima o resultado no console. 
+*/
+
+function calculoHipotenusa(a, b) {
+    const h = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+    return h
+}
+const resultadoHipotenusa = calculoHipotenusa(2, 4)
+console.log("h= ", resultadoHipotenusa)

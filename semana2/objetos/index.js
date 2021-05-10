@@ -206,4 +206,4 @@ c) Crie uma função que receba um objeto fruta por parâmetro e coloque-a dentr
  }
 
  frutasSacolao(frutasSacolao1)
-console.log(carrinho)
+

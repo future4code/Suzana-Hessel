@@ -122,15 +122,33 @@ function checaRenovacaoRG() {
    const anoAtual1 = prompt("Digite o ano atual")
    const anoNascimento1 = prompt("Digite o ano que você nasceu")
    const dataEmissaoRg = prompt("Digite a data de emissão da sua carteira de identidade")
-   console.log(" Ano atual: ")
+   console.log(" Ano atual: " + anoAtual1 + " ano de nascimento: " + anoNascimento1 + "ano de emissão do RG: " + dataEmissaoRg)
    const idadeUsuarioRg = anoAtual1 - anoNascimento1
-   const renovacaoRg1 = idadeUsuarioRg <= 20
-   const renovacaoRg2 = idadeUsuarioRg >= 20 <= 50
-   const renovacaoRg3 = idadeUsuarioRg > 50
-   console.log(renovacaoRg1)
-
+   const tempoRg = anoAtual1 - dataEmissaoRg 
+   const renovacaoRg1 = idadeUsuarioRg <= 20 && tempoRg >= 5
+   const renovacaoRg2 = 20 > idadeUsuarioRg <= 50 && tempoRg >= 10
+   const renovacaoRg3 = idadeUsuarioRg > 50 && tempoRg  >= 15
+   const resultRenovaRg = renovacaoRg1 || renovacaoRg2 || renovacaoRg3
+   console.log(resultRenovaRg)
 }
 
+// function checaRenovacaoRG()
+// {
+//    const anoAtual = prompt("Digite o ano atual")
+//    const anoNascimento = prompt("Digite o ano de nascimento")
+//    const dataEmissao = prompt("Digite a data de emissão da sua carteira de identidade")
+
+//    const idade = anoAtual - anoNascimento
+//    const tempoRG = anoAtual - dataEmissao
+
+//    const renovacaoRG1 = idade <= 20 && tempoRG == 5
+//    const renovacaoRG2 = 20 > idade <= 50 && tempoRG == 10
+//    const renovacaoRG3 =  idade > 50 && tempoRG == 15
+
+//    const resultado = renovacaoRG1 || renovacaoRG2 || renovacaoRG3
+//    console.log(resultado)
+
+// }
 // Exercício 14
 
 function checaAnoBissexto(ano) {
@@ -140,5 +158,13 @@ function checaAnoBissexto(ano) {
 // Exercício 15
 
 function checaValidadeInscricaoLabenu() {
-   // implemente sua lógica aqui
+   const idadeIncricaoLabenu = prompt("Você tem mais de 18 anos?")
+   const formacaoInscricaoLabenu = prompt("Você possui ensino médio completo?")
+   const dispoInscricaoLabenu = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+  
+   const idadeValida = idadeIncricaoLabenu == 
+   const formacaoValida = formacaoInscricaoLabenu == 
+   const dispodispoValida = dispoInscricaoLabenu == 
+   
+   console.log(idadeValida, formacaoValida, dispodispoValida)
 }

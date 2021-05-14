@@ -149,10 +149,11 @@ diretamente como parâmetro, sem criar variáveis.
 //     ]
 
 // const novoArrayPetsB = pets.filter((item, index, array) => {
-//     return item.raca === "Poodle" 
+//   return item.raca === "Poodle" 
 // })
 
-// console.log(novoArrayPetsB + "Você ganhou um cupom de desconto de 10% para tosar o/a pet !")
+// console.log("Você ganhou um cupom de desconto de 10% para tosar o/a " + novoArrayPetsB[0].nome + "!")
+// console.log("Você ganhou um cupom de desconto de 10% para tosar o/a " + novoArrayPetsB[1].nome + "!")
 
 /*
     
@@ -274,21 +275,26 @@ Esse array deve conter frases apenas dos itens cujo nome contenha a palavra "Yp�
 
 */
 
-// const produtos = [
-//     { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
-//     { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
-//     { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
-//     { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
-//     { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
-//     { nome: "Cândida", categoria: "Limpeza", preco: 3.30 }, 
-//     { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
-//     { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
-//     { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
-//     { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
-//     ]
-// const novoArrayFrase = produtos.map((item, index, array) => {
-//     return " Compre " + item.nome + " por " + item.preco + " . "
+const produtos = [
+  { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
+  { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
+  { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
+  { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
+  { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
+  { nome: "Cândida", categoria: "Limpeza", preco: 3.30 }, 
+  { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
+  { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
+  { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
+  { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
+  ]
+const novoArrayYpe = produtos.filter((item, index, array) => {
+  return item.nome.includes("Ypê")
 
-// })
+})
 
-// console.log(novoArrayFrase)
+const novoArrayFrase = novoArrayYpe.map((item, index, array) => {
+   return " Compre " + item.nome + " por " + item.preco + " da categoria " + item.categoria +  "."
+
+})
+
+console.log(novoArrayFrase)

@@ -207,3 +207,25 @@ c) Crie uma função que receba um objeto fruta por parâmetro e coloque-a dentr
 
  frutasSacolao(frutasSacolao1)
 
+
+
+
+
+
+
+
+function mostrarMensagem(objeto){
+   if (objeto.gênero == "Feminino" ){
+    return "Bem-vinda, " + objeto.nome
+   }
+   else if(objeto.gênero == "Masculino"){
+       return "Bem-vindo, " + objeto.nome
+   }
+    else{
+        return "Desejamos boas-vindas!"
+    }
+}
+const pessoa = {
+    nome: "Suzana",
+    gênero: "Feminino"
+}

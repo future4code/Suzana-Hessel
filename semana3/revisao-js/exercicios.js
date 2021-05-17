@@ -1,48 +1,50 @@
 //Exercício 1
 
 // function inverteArray(array) {
+// }
 
+//Exercício 2
 
-//  }
+// function retornaNumerosParesElevadosADois (array) {
+//    const arrayNovo = []
+//    const numerosPares = array.filter((numero) => {
+//       return numero % 2 === 0 
+//     })
+//    for(let i = 0; i < numerosPares.length; i++){
+//        arrayNovo.push(Math.pow(numerosPares[i], 2))
+//    }
 
-// //Exercício 2
-
-function retornaNumerosParesElevadosADois (array) {
-   const arrayNovo = []
-   const numerosPares = array.filter((numero) => {
-      return numero % 2 === 0 
-    })
-   for(let i = 0; i < numerosPares.length; i++){
-       arrayNovo.push(Math.pow(numerosPares[i], 2))
-   }
-
-
-   console.log(arrayNovo)
-  }
-  retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
+//    console.log(arrayNovo)
+//   }
+//   retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
  
 //Exercício 3
 
-function retornaNumerosPares(array) {
-   const numerosPares = array.filter((numero) => {
-     return numero % 2 === 0
-   })
-   console.log(numerosPares)
- }
+// function retornaNumerosPares(array) {
+//    const numerosPares = array.filter((numero) => {
+//      return numero % 2 === 0
+//    })
+//    console.log(numerosPares)
+//  }
  
- retornaNumerosPares([0, 1, 2, 3, 4, 5, 6])
+//  retornaNumerosPares([0, 1, 2, 3, 4, 5, 6])
 
 //Exercício 4
 
-function retornaMaiorNumero(array) {
-   // implemente sua lógica aqui
-}
+// const arrayOriginal = [0, 1, 2, 3, 4, 5, 6]
+
+// function retornaMaiorNumero(array) {
+//    for(let i = 0; i < arrayOriginal.length; i++){
+    
+//    }
+// }
 
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
+   return array.length
 }
+retornaQuantidadeElementos([0, 1, 2, 3, 4, 5, 6])
 
 //Exercício 6
 

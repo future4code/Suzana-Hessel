@@ -19,18 +19,18 @@ function retornaNumerosParesElevadosADois (array) {
 
    console.log(arrayNovo)
   }
-  retornaNumerosParesElevadosADois([0, 1, 2, 3, 4, 5])
+  retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
  
 //Exercício 3
 
-// function retornaNumerosPares(array) {
-//    const numerosPares = array.filter((numero) => {
-//      return numero % 2 === 0
-//    })
-//    console.log(numerosPares)
-//  }
+function retornaNumerosPares(array) {
+   const numerosPares = array.filter((numero) => {
+     return numero % 2 === 0
+   })
+   console.log(numerosPares)
+ }
  
-//  retornaNumerosPares([0, 1, 2, 3])
+ retornaNumerosPares([0, 1, 2, 3, 4, 5, 6])
 
 //Exercício 4
 

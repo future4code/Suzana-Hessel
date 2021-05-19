@@ -34,7 +34,7 @@ function retornaNumerosPares(array) {
   console.log(numerosPares);
 }
 
-retornaNumerosPares([0, 1, 2, 3, 4, 5, 6]);
+retornaNumerosPares([1, 2, 3, 4, 5, 6]);
 
 //Exercício 4
 
@@ -129,38 +129,117 @@ comparaDoisNumeros(1, 2)
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-  // implemente sua lógica aqui
-}
+   let menor = Infinity
+   let maior = 0
+   let segundoMenor = Infinity
+   let segundoMaior = 0
+   let indiceMenor = 0
+   let indiceMaior = 0
+   let arrayDoisNumeros = []
+ 
+   for(let i of array){
+     if(i < menor){
+       menor = i
+       indiceMenor = array.indexOf(menor)
+      }
+      if(i > maior){
+        maior = i
+        indiceMaior = array.indexOf(maior)
+ 
+      }
+   }
+   array.splice(indiceMaior, 1)
+   array.splice(indiceMenor, 1)
+ 
+   for(let i of array){
+     if(i < segundoMenor){
+       segundoMenor = i
+     }
+     if(i > segundoMaior){
+       segundoMaior = i
+     }
+   }
+   arrayDoisNumeros.push(`O segundo maior é: ${segundoMaior}`)
+   arrayDoisNumeros.push(`O segundo menor é: ${segundoMenor}`)
+   console.log(arrayDoisNumeros)
+ 
+   return arrayDoisNumeros
+ }
+ segundoMaiorEMenor([0, 2, 4, 6, 8])
 
-//Exercício 11
+// //Exercício 11 (Resposta Usando "Buble sort")
 
 function ordenaArray(array) {
-  // implemente sua lógica aqui
-}
+   for(let i = 0; i < array.length; i++){
+     for(let j = 0; j < (array.length - i - 1); j++){
+       if(array[j] > array[j + 1]){
+         let temp = array[j]
+       array[j]= array[j + 1]
+       array[j + 1] = temp
+       }
+     }
+   }
+   console.log(array)
+   return array 
+ }  
+ ordenaArray([28, 55, 2, 7, 20, 18, 9])
 
 // Exercício 12
 
 function filmeFavorito() {
-  // implemente sua lógica aqui
+  const filmeFavoritoDoAstrodev = {
+   nome: "O Diabo Veste Prada",
+   ano: 2006,
+   diretor: "David Frankel",
+   atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+  }
+  console.log(`O filme favorito do Astrodev é:` , filmeFavoritoDoAstrodev)
+  return filmeFavoritoDoAstrodev
 }
+filmeFavorito()
 
 // Exercício 13
 
 function imprimeChamada() {
-  // implemente sua lógica aqui
-}
+   const filmeFavoritoDoAstrodev = {
+        nome: "O Diabo Veste Prada",
+        ano: 2006,
+        diretor: "David Frankel",
+        atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+       }
+   console.log(`Venha assistir ao filme ${filmeFavoritoDoAstrodev.nome}, de ano ${filmeFavoritoDoAstrodev.ano}, dirigido por ${filmeFavoritoDoAstrodev.diretor} e estrelado por ${filmeFavoritoDoAstrodev.atores[0]}, ${filmeFavoritoDoAstrodev.atores[1]}, ${filmeFavoritoDoAstrodev.atores[2]} e ${filmeFavoritoDoAstrodev.atores[3]}. `)
+   return `Venha assistir ao filme ${filmeFavoritoDoAstrodev.nome}, de ano ${filmeFavoritoDoAstrodev.ano}, dirigido por ${filmeFavoritoDoAstrodev.diretor} e estrelado por ${filmeFavoritoDoAstrodev.atores[0]}, ${filmeFavoritoDoAstrodev.atores[1]}, ${filmeFavoritoDoAstrodev.atores[2]} e ${filmeFavoritoDoAstrodev.atores[3]}. `
+ }
+ imprimeChamada()
+
 
 // Exercício 14
 
 function criaRetangulo(lado1, lado2) {
-  // implemente sua lógica aqui
-}
+   const dadosRetangulo = {
+      largura: lado1,
+      altura: lado2,
+      perimetro: (2 * (lado1 + lado2)),
+      area: lado1 * lado2
+   }
+   console.log(`Os dados do retângulo são: largura: ${dadosRetangulo.largura} , altura: ${dadosRetangulo.altura}, perímetro: ${dadosRetangulo.perimetro} e área: ${dadosRetangulo.area} .`)
+   return dadosRetangulo
+ }
+ criaRetangulo(4, 8)
 
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-  // implemente sua lógica aqui
-}
+   const meusDados = {
+     nome: "Suzana",
+     idade: 28,
+     email: "suhessel28@gmail.com",
+     endereco: "Rua Claudio Silveira, 411"
+   }
+   console.log(`nome: ${meusDados.nome.replaceAll("Suzana", "ANÔNIMO")}, idade: ${meusDados.idade}, email: ${meusDados.email} e endereço: ${meusDados.endereco}. ` )
+   return `nome: ${meusDados.nome.replaceAll("Suzana", "ANÔNIMO")}, idade: ${meusDados.idade}, email: ${meusDados.email} e endereço: ${meusDados.endereco}. `
+ }
+ anonimizaPessoa()
 
 // Exercício 16
 
@@ -174,32 +253,63 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-  // implemente sua lógica aqui
+   const arrayDeAdultos = arrayDePessoas.filter((pessoa) => {
+      return pessoa.idade >= 20
+   })
+   console.log(arrayDeAdultos)
+   return arrayDeAdultos
 }
+maioresDe18
+
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-  // implemente sua lógica aqui
+  const arrayDeCriancas = arrayDePessoas.filter((pessoa) => {
+     return pessoa.idade < 20
+  })
+  console.log(arrayDeCriancas)
+  return arrayDeCriancas
 }
+menoresDe18
 
 // Exercício 17, letra A
 
+const arrayBase = [1, 2, 3, 4, 5, 6]
 function multiplicaArrayPor2(array) {
-  // implemente sua lógica aqui
+  const multiplicaArray = arrayBase.map((numArray) => {
+    return numArray * 2
+  })
+  console.log(multiplicaArray)
+  return multiplicaArray
 }
+multiplicaArrayPor2()
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-  // implemente sua lógica aqui
-}
+   ArrayString = arrayBase.map((numArray) => {
+     return (numArray * 2).toString()
+   })
+   console.log(ArrayString)
+   return ArrayString
+ }
+ multiplicaArrayPor2S()
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-  // implemente sua lógica aqui
-}
+   const arrayParidade = arrayBase.map((numArray) => {
+     if(numArray % 2 === 0){
+       return `${numArray} é par`
+     }else{
+       return `${numArray} é impar`
+     }
+   })
+   console.log(arrayParidade)
+   return arrayParidade
+ }
+ verificaParidade()
 
 // Exercício 18
 
@@ -215,14 +325,28 @@ const pessoas = [
 //Exercício 18, letra A
 
 function retornaPessoasAutorizadas() {
-  // implemente sua lógica aqui
+  const pessoasAutorizadas = pessoas.filter((pessoas) => {
+     if( 15 < pessoas.idade < 59 && pessoas.altura >= 1.5 ){
+        return `${pessoas} estão autorizadas a entrar`
+     }else{
+        return `${pessoas} não estão autorizadas`
+     }
+  })
+  console.log(pessoasAutorizadas)
+  return pessoasAutorizadas
 }
+retornaPessoasAutorizadas()
 
 // Exercício 18, letra B
 
 function retornaPessoasNaoAutorizadas() {
-  // implemente sua lógica aqui
-}
+   const pessoasNaoAutorizadas = pessoas.filter((pessoa) => {
+     return pessoa.altura < 1.5 || pessoa.idade < 14 || pessoa.idade > 60 
+   })
+   console.log(pessoasNaoAutorizadas)
+   return pessoasNaoAutorizadas
+ }
+ retornaPessoasNaoAutorizadas()
 
 //Exercício 19
 
@@ -235,7 +359,19 @@ const consultasNome = [
 
 //Exercício 19, letra A
 
-function ordenaPorNome() {}
+function ordenaPorNome() {
+   for(let i = 0; i < consultasNome.length; i++){
+     for(let j = 0; j < consultasNome.length - i - 1; j++)
+     if(consultasNome[j].nome > consultasNome[j + 1].nome){
+       const temp = consultasNome[j]
+       consultasNome[j] = consultasNome[j + 1]
+       consultasNome[j + 1] = temp
+     }
+   }
+   console.log(consultasNome)
+   return consultasNome
+ }
+ ordenaPorNome()
 
 // Exercício 19, letra B
 
@@ -246,7 +382,10 @@ const consultasData = [
   { nome: "Márcia", dataDaConsulta: "04/05/2021" },
 ];
 
-function ordenaPorData() {}
+function ordenaPorData() {
+  }
+  
+
 
 //Exercício 20
 
@@ -260,5 +399,14 @@ const contas = [
 ];
 
 function atualizaSaldo() {
-  // implemente sua lógica aqui
+   contas.forEach((conta) => {
+      let totalDeCompras = 0
+      conta.compras.forEach((valor) => {
+         totalDeCompras = totalDeCompras + valor
+      })
+      conta.saldoTotal = conta.saldoTotal - totalDeCompras
+   })
+   console.log(contas)
+  return contas
 }
+atualizaSaldo()

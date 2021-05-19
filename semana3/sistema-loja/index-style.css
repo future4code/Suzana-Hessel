@@ -1,0 +1,71 @@
+#boas-vindas{
+
+    display: block;
+    color: white;
+    background-color: green ;
+    margin-left: 20px ;
+    margin-right: 20px ;
+    padding-left: 500px;
+
+}
+
+.frase-entrada{
+    display: inline;
+    color:green;
+    margin-left: 620px ;
+    margin-right: 600px ;
+  
+}
+
+.frase-efeito{
+    display: inline;
+    color: green;
+    margin-left: 540px ;
+    margin-right: 400px ;
+    
+}
+
+.pagina-inicial{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px;
+    
+}
+
+.estoque{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.add-produto{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.funcionarios{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.midias-sociais-titulo{
+    display: block;
+    color: green;
+    margin-top: 500px;
+    margin-left: 20px;
+}
+
+.imagens-midia-social{
+    display: inline;
+    width: 20px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px;
+
+}

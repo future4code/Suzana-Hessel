@@ -21,7 +21,7 @@ input {
     width: 500px;
     border-right: none;
     border-left: none;
-    border-top: black ;
+    border-top: black;
     
 
 }
@@ -67,7 +67,8 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    width: 30px;
+    height: 25px;
 }
 
 
@@ -99,7 +100,8 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
-    display: block
+    display: block;
+    
 }
 
 
@@ -166,4 +168,9 @@ td button:hover{
 
 .botão{
     text-align: center;
+}
+
+body{
+    
+    font-family:  'Roboto';
 }

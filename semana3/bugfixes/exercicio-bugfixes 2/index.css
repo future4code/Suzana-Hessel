@@ -38,7 +38,6 @@ div img {
     
     width: 50px;
     
-    
 }
 
 .botao-amarelo {
@@ -109,6 +108,7 @@ div>div{
 }
 
 table {
+    margin: 0 auto;
     width: 60%;
     text-align: center;
 }
@@ -126,7 +126,6 @@ td button {
     height: 100px;
 }
 
-
 #back-button {
     background-color: white;
     width: 100px;
@@ -139,4 +138,8 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.botão{
+    text-align: center;
 }

@@ -19,11 +19,22 @@ h2 {
 input {
     height: 20px;
     width: 500px;
-    border-right: none;
     border-left: none;
-    border-top: black;
-    
+    border-right: none;
+    border-top: none
+}
 
+input:hover{
+   
+    cursor: pointer;
+    border-bottom:purple
+    
+}
+
+input:active{
+    
+    cursor: pointer;
+ 
 }
 
 button:focus {
@@ -63,12 +74,13 @@ div img {
 .container {
     height: 500px;
     text-align: center;
-    
+  
 }
 
 .icone {
-    width: 30px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+
 }
 
 
@@ -143,8 +155,8 @@ td button:hover{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
-    border: none;
 }
+
 
 #back-button {
     background-color: white;
@@ -171,7 +183,3 @@ td button:hover{
     text-align: center;
 }
 
-body{
-    
-    font-family:  'Roboto';
-}

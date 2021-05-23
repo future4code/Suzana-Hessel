@@ -1,0 +1,124 @@
+/* Edições Gerais*/
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+/* html {
+    box-sizing: border-box;
+  }
+   */
+  
+  body {
+    
+    background: white;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    /* padding: 5px;
+    margin: 20px; */
+    max-width: 600px;
+   
+    display: block;
+   
+  }
+  
+  div {
+    min-height: 100px;  
+    height: 500px;
+    padding: 10px; 
+   
+    /* margin: 5px; */
+    text-align: center;
+    margin-top: 50px;
+    /* overflow: hidden; */
+  
+  }
+  
+  .purple {
+    background-color:violet;
+    
+  }
+  
+  .green {
+    background-color: darkviolet;
+    
+  }
+  
+  .orange {
+    background-color: magenta;
+    
+  }
+
+  /* .white{
+  display: block;
+  background-color: white;
+  width: 50px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  text-align:  center;
+  border-radius: 200px;
+  } */
+
+ .primeiro-elemento > img{
+
+    width: 500%;
+    border-radius: 50px;
+  }
+
+ 
+  .primeiro-elemento {
+    /* border-radius: 10px;   */
+    
+    display: block;
+    width: 240%;
+    height: 5%;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    /* position: sticky; */
+    color: white;
+  }
+  
+
+
+  .segundo-elemento {
+  
+    /* position: relative;
+    top: 50px;
+    right: 20px */
+    display: block;
+    width: 200%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    border-radius: 10px;  
+    
+  }
+
+
+  .terceiro-elemento {
+  
+    /* position: relative;
+    top: 50px;
+    right: 20px */
+    display: block;
+    width: 200%;
+    /* margin: 10px */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    
+  }
+
+img{
+    
+  margin-top: 300px;
+  width: 30px;
+
+}
+

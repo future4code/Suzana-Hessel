@@ -8,16 +8,22 @@
 
 body {
 
-color: white;
+color: rgb(12, 196, 175) ;
 font-family: 'Roboto', sans-serif;
 min-width: 100px;
 max-width: 1520px;
-
 }
 
 
 /*menu*/
 
+.menu{
+    background-color:rgb(12, 196, 175) ;
+}
+
+.menu > h2{
+    color:white
+}
 
 .linha{
     background-color: orange;
@@ -28,9 +34,8 @@ max-width: 1520px;
 
 ul{
     display: flex ;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: 1000px;
-   
 }
 
 li{
@@ -39,22 +44,24 @@ li{
 
 a{
     text-decoration: none;
-    color: orange;
+    color: white;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
 }
 a:hover{
-    color: rgb(12, 196, 175) ;
+    color: orange;
 }
 
 
 /*corpo*/
+
 
 h1{
     color:rgb(12, 196, 175) ;
     font-family:'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin-top: 100px;
+    
 }
 
 .progresso{
@@ -80,6 +87,14 @@ h1{
     background-image: linear-gradient(to right, rgb(255, 102, 0),  orange, rgb(250, 193, 87));
   }
 
+.divisoria{
+    background-color: #ccc;
+    width: 1520px;
+    height: 0.5px;
+    margin-top: 100px;
+  }
+
+
 .cartoon-me > img{
     width: 150px;
     height: 150px;
@@ -96,25 +111,34 @@ h1{
 
 .corpo-primario > h2{
     color:white;
-    font-family:"eurostile", sans-serif;
+    font-family:'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family:"eurostile", sans-serif; */
     text-align: center;
     margin-top: 30px;
+    
 }
 
 .corpo-primario > p{
     color:white;
-    font-family:"europa", sans-serif;
+    font-family:'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     font-size: 20px;
 }
 
 
 .corpo-primario > img{
-    width: 950px;
-    height: 300px;
-    margin-top: 200px;
-    margin-left: 290px;
+    width: 980px;
+    height: 320px;
+    margin-top: 180px;
+    margin-bottom: 20px;
+    margin-left: 270px;
     
+}
+
+.barra-corpo{
+    background-color: rgba(218, 86, 10, 0.966);
+    width: 1520px;
+    height: 10px;
 }
 
 .corpo-secundario{
@@ -129,9 +153,15 @@ h1{
 
 /* rodapé*/
 
+.barra-rodape{
+    background-color: rgba(218, 86, 10, 0.966);
+    width: 1520px;
+    height: 10px;
+}
+
 .rodape{
     
-    margin-left: 550px;
+    margin-left: 580px;
     margin-top: 100px;
     height: 200px;
  }

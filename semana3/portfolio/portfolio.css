@@ -8,7 +8,7 @@
 
 body {
 
-color: white;
+color: rgb(12, 196, 175) ;
 font-family: 'Roboto', sans-serif;
 min-width: 100px;
 max-width: 1520px;
@@ -26,26 +26,33 @@ max-width: 1520px;
     background-image: linear-gradient(to right, white, orange);
   }
 
-ul{
+  .menu{
+    background-color:rgb(12, 196, 175) ;
+    width: 1520px;
+  }
+  
+  
+  ul{
     display: flex ;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: 1000px;
    
-}
-
-li{
+  }
+  
+  li{
     padding: 20px;
   }
-
-a{
+  
+  a{
     text-decoration: none;
-    color: orange;
+    color: white;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px;
-}
-a:hover{
-    color: rgb(12, 196, 175) ;
-}
+  }
+  
+  a:hover{
+    color: orange;
+  }
 
 
 /*corpo*/

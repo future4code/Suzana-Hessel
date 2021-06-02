@@ -9,7 +9,7 @@ function CardPequeno(props) {
                 <h4>{ props.email }</h4>
             </div>
             <div>
-                <h4>{  props.endereco  }</h4>
+                <p>{ props.endereco  }</p>
             </div>
         </SmallcardContainer>
     )

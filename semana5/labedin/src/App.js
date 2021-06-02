@@ -13,7 +13,7 @@ function App() {
         <CardGrande 
           imagem="https://light-dad.surge.sh/img/cartoons/me-smile.png"
           nome="Suzana Pereira Hessel" 
-          descricao="Oi, eu sou a Suzana. Sou formada em Licenciatura em Física pela Universidade Federal de Uberlândia. Lecionei para o ensino médio na rede pública estadual por um tempo, porém, não estava satisfeita com a área e decidi transitar de carreira. No momneto, estou cursando Web Full Stack Developer na Labenu, turma Molina, com previsão de conclusão para outubro de 2021."
+          descricao="Oi, eu sou a Suzana. Sou formada em Licenciatura em Física pela Universidade Federal de Uberlândia. Lecionei para o ensino médio na rede pública estadual por um tempo, porém, não estava satisfeita com a área e decidi transitar de carreira. No momento, estou cursando Web Full Stack Developer na Labenu, turma Molina, com previsão de conclusão para outubro de 2021."
         />
         
         <ImagemButton 

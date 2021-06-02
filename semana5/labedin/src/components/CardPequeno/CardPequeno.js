@@ -1,9 +1,9 @@
 import React from 'react';
-import './CardPequeno.css'
+import {SmallcardContainer} from'./CardPequeno-Style'
 
 function CardPequeno(props) {
     return (
-        <div className="smallcard-container">
+        <SmallcardContainer>
             <img src={ props.imagem } />
             <div>
                 <h4>{ props.email }</h4>
@@ -11,7 +11,7 @@ function CardPequeno(props) {
             <div>
                 <h4>{  props.endereco  }</h4>
             </div>
-        </div>
+        </SmallcardContainer>
     )
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import styled from "styled-components";
+import {AppCard, PageSectionContainer, } from './app-style';
 import CardGrande from './components/CardGrande/CardGrande';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
@@ -8,8 +7,8 @@ import ImagemButton from './components/ImagemButton/ImagemButton';
 
 function App() {
   return (
-    <div className="App">
-      <div className="page-section-container">
+    <AppCard>
+      <PageSectionContainer>
         <h2>Dados pessoais</h2>
         <CardGrande 
           imagem="https://light-dad.surge.sh/img/cartoons/me-smile.png"
@@ -21,24 +20,25 @@ function App() {
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
         />
-      </div>
+      </PageSectionContainer>
 
-      <div className="page-section-container">
+      <PageSectionContainer>
         <CardPequeno 
           imagem="https://cdn.iconscout.com/icon/free/png-256/email-1818372-1541480.png" 
           email="E-mail : suhessel28@gmail.com" 
           
         />
-        </div>
+        </PageSectionContainer>
 
-        <div className="page-section-container">
+        <PageSectionContainer>
         <CardPequeno 
           imagem="http://simpleicon.com/wp-content/uploads/address.png" 
           endereco="Endereço: Rua Claudio Silveira, Roosevelt, Uberlândia-MG." 
         />
-        </div>
+        
+        </PageSectionContainer>
 
-      <div className="page-section-container">
+      <PageSectionContainer>
         <h2>Experiências profissionais</h2>
         <CardGrande 
           imagem="https://projeto-cdn.infra.grancursosonline.com.br/see-mg-secretaria-de-estado-de-educacao-de-minas-gerais.png" 
@@ -51,9 +51,9 @@ function App() {
           nome="Intercâmbio na Spienza-Università di Roma " 
           descricao="Intercâmbio de Física na Università di Roma - Spienza de 2013-2014." 
         />
-      </div>
+      </PageSectionContainer>
 
-      <div className="page-section-container">
+      <PageSectionContainer>
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
           imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
@@ -64,8 +64,8 @@ function App() {
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
           texto="Twitter" 
         />        
-      </div>
-    </div>
+      </PageSectionContainer>
+    </AppCard>
   );
 }
 

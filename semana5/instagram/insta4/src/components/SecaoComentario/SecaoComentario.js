@@ -25,7 +25,6 @@ export class SecaoComentario extends Component {
 		return <CommentContainer>
 		
 			<InputComentario
-			
 				placeholder={'Comentário'}
 				value = {this.state.comentando}
 				onChange={this.onChangeComentario}

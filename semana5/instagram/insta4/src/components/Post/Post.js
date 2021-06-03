@@ -50,20 +50,33 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    this.setState({
-      curtido: true,
-      numeroCurtidas: this.state.numeroCurtidas + 1,
-      
-    })
+    if(this.state.curtido === false){
+      this.setState({
+        curtido: !this.state.curtido,
+        numeroCurtidas: this.state.numeroCurtidas + 1,
+      })
+    }
+    else{
+      this.setState({
+        curtido: !this.state.curtido,
+        numeroCurtidas: this.state.numeroCurtidas - 1,
+      })
+    }
+    
     console.log('Curtiu!')
-
   }
+  // menosUmaCurtida = () => {
+  //   this.setState({
+  //     numeroCurtidas: this.state.numeroCurtidas - 1,
+  //   })
+  // }
 
   onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
     })
   }
+  
 
   aoEnviarComentario = () => {
     this.setState({
@@ -73,6 +86,8 @@ class Post extends React.Component {
     console.log()
   }
 
+
+
   render() {
 
     let iconeCurtida
@@ -81,7 +96,6 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco 
-      
     }
 
     let componenteComentario

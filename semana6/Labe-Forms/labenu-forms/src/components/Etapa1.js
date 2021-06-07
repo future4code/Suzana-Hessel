@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container4 = styled.div`
+ 
+  padding-bottom: 20px;
+
+`
+
 export default class Etapa1 extends React.Component {
   state = {
     valorNome: "",
     valorIdade: "",
     valorEmail: "",
-    valorEscolaridade: "",
+    valorEscolaridade: " ",
   };
 
+  
   onChangeNome = (event) => {
     this.setState({ valorNome: event.target.value });
   };
@@ -18,13 +25,15 @@ export default class Etapa1 extends React.Component {
   onChangeEmail = (event) => {
     this.setState({ valorEmail: event.target.value });
   };
-  onChangeEscolaridade = (event) => {
-    this.setState({ valorEscolaridade: event.target.value });
+  onChangeEscolaridade = (valorEscolaridade) => {
+    this.setState({ valorEscolaridade });
   };
 
   render() {
+     
     return (
-      <div className="App">
+        
+      <div>
         <h2>ETAPA 1 - DADOS GERAIS</h2>
         <form>
           <label>
@@ -51,26 +60,26 @@ export default class Etapa1 extends React.Component {
               value={this.state.valorEmail}
             />
           </label>
-
-          <label>
+          <Container4>
           <p> 4. Qual a sua escolaridade?</p> 
-          
-          
-            onChange={this.onChangeEscolaridade}
             <select>
-
-            <option value={"Ensino médio incompleto"} > Ensino médio incompleto
-            <option value={"Ensino médio completo"} > Ensino médio incompleto
-            <option value={"Ensino superior incompleto"} > Ensino médio incompleto
-            <option value={"Ensino superior completo"} > Ensino médio incompleto
+                value={this.state.valorEscolaridade}
+                onChange={this.onChangeEscolaridade}
+                <option>
+                Ensino médio incompleto
+                </option>
+                <option>
+                Ensino médio completo
+                </option>
+                <option>
+                Ensino superior incompleto
+                </option>
+                <option>
+                Ensino superior completo
+                </option>
             </select>
-                
-                
-          
-        </label>
-          
+        </Container4>
         </form>
-
         <button onClick={this.props.trocaDePagina}>Próxima Etapa</button>
       </div>
     );

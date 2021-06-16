@@ -13,22 +13,44 @@ const UserContainer= styled.div`
   left: 400px;
   width: 50%;
   height: auto;
+ 
+
+  h2 {
+    position: relative;
+    top: 50px;
+    right: 5px;
+    color: orange;
+  }
 `;
 
 const ButtonDelete = styled.span`
   position: relative;
-  left: 40px;  
-  color: red;
+  right: 30px;  
+  color: white;
+  background-color: red;
+  width: 50px;
+  text-align: center;
   cursor: pointer;
+  border-radius: 4px;
 `;
 
 const UsuarioCadastrado = styled.div`
   display: flex;
-  border: 2px solid black;
   width: 50%;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  top: 100px;
+  justify-content: space-between;
+  padding: 2px;
+  background-color: crimson;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
   
+
+  li {
+    padding-left: 25px;
+  }
+
 `;
 
 const url =
@@ -87,7 +109,7 @@ class ListaUsuarios extends React.Component {
                 {usuario.name} 
               </li>
               <ButtonDelete onClick={() => this.DeleteUsuario(usuario.id)}>
-                X
+                Delete
               </ButtonDelete>
             </UsuarioCadastrado>
           );

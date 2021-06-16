@@ -18,6 +18,7 @@ const AppContainer = styled.div`
     outline: none;
     border: none;
     overflow: hidden;
+    border-radius: 5px;
     cursor: pointer;
   }
 `;
@@ -30,19 +31,23 @@ const ContainerCadastro = styled.div`
   top: 100px;
   height: 250px;
   width: 20%;
-  border: 1px solid black;
+  border: 2px solid orange;
+  border-radius: 5px;
   margin: 0 auto;
   padding: 30px;
+  background-color: crimson;
 
   label {
     position: relative;
     left: 50px;
+    
   }
 
   p {
     position: relative;
     top: 15px;
     font-weight: bold;
+    color: orange;
   }
   input {
     width: 200px;
@@ -70,7 +75,7 @@ const ButtonVoltar = styled.span`
   display: block;
   position: relative;
   bottom: 180px;
-  
+ 
 `
 
 const url =
@@ -122,12 +127,12 @@ class App extends React.Component {
         {this.state.trocaTela ? (
           <ButtonVoltar>
             <ListaUsuarios/>
-            <button onClick={this.onClickTrocaTela}>Voltar</button>
+            <button onClick={this.onClickTrocaTela}>Voltar para Página de Cadastro</button>
           </ButtonVoltar>
         ) : (
           <div>
             <button onClick={this.onClickTrocaTela}>
-              Ir para lista de usuários cadastrados
+              Ir para Lista de Usuários Cadastrados
             </button>
             <ContainerCadastro>
               <label>

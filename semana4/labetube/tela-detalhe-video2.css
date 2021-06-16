@@ -18,7 +18,7 @@ header{
 
 .buscar{
     margin-right: 25px; 
-   
+
 }
 
 button{
@@ -30,7 +30,7 @@ button{
     display: flex;
     text-align: center;
     font-size: 15px;
-    
+
 }
 
 .video2{
@@ -46,7 +46,7 @@ video{
 }
 
 h2{
-    
+
     padding-top: 50px;
     text-align: center;
     color: rgb(95, 10, 241);
@@ -65,4 +65,4 @@ footer{
     color: white;
     font-weight: bold;
 
-}
+

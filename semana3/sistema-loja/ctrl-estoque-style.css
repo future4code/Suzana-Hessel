@@ -1,0 +1,82 @@
+
+.pomagico-estoque{
+    display: block;
+    color: green;
+}
+
+th{
+   
+    color: green;
+    
+}
+
+
+#controle-estoque-titulo{
+    display: block;
+    color: green;
+}
+
+.pagina-inicial{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px;
+    
+}
+
+.estoque{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.add-produto{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.funcionarios{
+    display: inline;
+    background:green;
+    color: white;
+    margin: 2px
+}
+
+.imagens-vitc{
+    display: inline;
+    width: 100px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px
+}
+.imagens-vitd{
+    display: inline;
+    width: 100px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px
+}
+.imagens-picolinato{
+    display: inline;
+    width: 100px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px
+}
+.imagens-colageno{
+    display: inline;
+    width: 100px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px
+}
+.imagens-colostro{
+    display: inline;
+    width: 100px;
+    color: green;
+    margin: 1px;
+    margin-left: 50px
+}

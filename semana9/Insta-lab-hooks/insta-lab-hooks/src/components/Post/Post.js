@@ -38,12 +38,13 @@ const Post = (props) => {
     const listaDeComentarios = [...comentarios, comentario];
     setComentarios(listaDeComentarios);
     setComentando(false);
-    setNumeroComentarios(setNumeroComentarios + 1);
+    console.log("NUMERO COMENTARIOS ", numeroComentarios)
+    setNumeroComentarios( numeroComentarios + 1);
   };
 
   const iconeCurtida = curtido ? iconeCoracaoPreto : iconeCoracaoBranco;
 
-  const caixaDeComentario = this.state.comentando ? (
+  const caixaDeComentario = comentando ? (
     <SecaoComentario enviarComentario={enviarComentario} />
   ) : (
     comentarios.map((comentario) => {

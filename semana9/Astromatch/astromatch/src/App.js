@@ -1,25 +1,56 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { url, headers } from "./constants/BASE-URL";
-import TelaMatches from "./components/TelaMatches";
+import MatchesScreen from "./components/MatchesScreen";
 import ProfileCard from "./components/ProfileCard";
+import styled from "styled-components";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+const Container = styled.div`
+  display: flex;
+  background-color: orange;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+`;
+
+const ContainerApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  border: 2px solid black;
+  max-width: 25vw;
+  max-height: 80vh;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background-color: yellow;
+ 
+  
+`;
+const ButtonChoice = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  
+`;
 
 const App = (props) => {
   const [profile, setProfile] = useState({});
-  const [choice, setChoice] = useState(true);
+  const [changePage, setChangePage] = useState("App");
 
   useEffect(() => {
     getProfile();
   }, []);
 
-  // useEffect(() => {
-  //   postChoice();
-  // });
-
   const getProfile = () => {
     axios
       .get(`${url}/person`)
       .then((response) => {
+        console.log("RESPONSE PROFILE", response);
         setProfile(response.data.profile);
       })
       .catch((err) => {
@@ -27,18 +58,22 @@ const App = (props) => {
       });
   };
 
-  const postChoice = () => {
+  const postChoice = (choice) => {
     const body = {
       id: profile.id,
       choice: choice,
     };
-    axios.post(`${url}/choose-person`, body, headers).then((response) => {
-      console.log("RESPONSE DO CHOICE", response);
-      setChoice(choice);
-    });
-    getProfile().catch((err) => {
-      console.log(err);
-    });
+    console.log("CHOICE", choice);
+    console.log("BODY", body);
+    axios
+      .post(`${url}/choose-person`, body, headers)
+      .then((response) => {
+        console.log("RESPONSE DO CHOICE", response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    getProfile();
   };
 
   const onClickChoiceNo = () => {
@@ -49,14 +84,47 @@ const App = (props) => {
     postChoice(true);
   };
 
-  return (
-    <div>
-      <ProfileCard profile={profile} />
-      <TelaMatches/>
-      <button onClick={onClickChoiceNo}>X</button>
-      <button onClick={onClickChoiceYes}>Yes</button>
+  const onClickChangePage = () => {
+    console.log("ENTREI NO MATCHES");
+    setChangePage("MatchesScreen");
+  };
 
-    </div>
+  const onClickGoApp = () => {
+    console.log("Entrei no onclickGoApp");
+    setChangePage("App");
+  };
+  const changeRender = () => {
+    switch (changePage) {
+      case "App":
+        return (
+          <div>
+            <ProfileCard profile={profile} />
+            <ButtonChoice>
+              <Footer
+                onClickChoiceNo={onClickChoiceNo}
+                onClickChoiceYes={onClickChoiceYes}
+              />
+            </ButtonChoice>
+          </div>
+        );
+      case "MatchesScreen":
+        return <MatchesScreen onClickGoApp={onClickGoApp} profile={profile} />;
+      default:
+        return "";
+    }
+  };
+
+  return (
+    <Container>
+      <ContainerApp>
+        <Header
+          changePage={changePage}
+          onClickChangePage={onClickChangePage}
+          onClickGoApp={onClickGoApp}
+        />
+        {changeRender()}
+      </ContainerApp>
+    </Container>
   );
 };
 

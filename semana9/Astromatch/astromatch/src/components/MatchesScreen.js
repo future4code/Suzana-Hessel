@@ -3,9 +3,31 @@ import axios from "axios";
 import { url } from "../constants/BASE-URL";
 import styled from "styled-components";
 
+const ContainerMatches = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 120px);
+  width: 22vw;
+  height: 480px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 20px;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+`;
+
 const Avatar = styled.img`
-  width: 20px;
-  height: 20px;
+  display: flex;
+  position: relative;
+  top: 15px;
+  margin-left: 10px;
+  width: 4vw;
+  height: 8vh;
+  border-radius: 40px;
+  
+ 
 `;
 
 const MatchesScreen = (props) => {
@@ -28,27 +50,19 @@ const MatchesScreen = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-        
-        </div>
+    <ContainerMatches>
         {matches &&
           matches.map((profile) => {
-            console.log(profile)
+            console.log(profile);
             return (
               <div>
                 {" "}
-                <Avatar
-                  src={profile ? profile.photo : "Sem foto"}
-                />
+                <Avatar src={profile ? profile.photo : "Sem foto"} />
                 <p>{profile ? profile.name : "Sem nome"}</p>
               </div>
             );
           })}
-      </div>
-
-    </div>
+    </ContainerMatches>
   );
 };
 

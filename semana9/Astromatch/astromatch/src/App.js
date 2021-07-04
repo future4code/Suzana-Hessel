@@ -6,37 +6,41 @@ import ProfileCard from "./components/ProfileCard";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import CleanMatches from "./components/CleanMatches";
 
 const Container = styled.div`
   display: flex;
-  background-color: orange;
+  background-color: pink;
   width: 100vw;
   height: 100vh;
   justify-content: center;
+  
 `;
 
 const ContainerApp = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  border: 2px solid black;
   max-width: 25vw;
   max-height: 80vh;
-  justify-content: center;
-  justify-items: center;
   align-items: center;
-  background-color: yellow;
- 
-  
-`;
+  background-image: url(${"https://swall.teahub.io/photos/small/327-3276854_wallpaper-galaxy-and-planet-image-space-aesthetic-iphone.jpg"});
+`
 const ButtonChoice = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 25px;
   padding-bottom: 25px;
-  
 `;
+
+const ButtonClear = styled.div`
+  display: flex;
+  height: 2vh;
+
+`;
+
+
 
 const App = (props) => {
   const [profile, setProfile] = useState({});
@@ -124,6 +128,8 @@ const App = (props) => {
         />
         {changeRender()}
       </ContainerApp>
+      <ButtonClear><CleanMatches/></ButtonClear>
+      
     </Container>
   );
 };

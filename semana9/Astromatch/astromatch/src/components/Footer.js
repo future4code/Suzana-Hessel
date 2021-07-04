@@ -5,14 +5,23 @@ import styled from "styled-components";
 const ContainerChoice = styled.div`
   display: flex;
   flex-direction: row;
+  width: 25vw;
+  height: 10vh;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 2px solid white;
+  
 
   button {
     display: flex;
     flex-direction: row;
-    width: 3vw;
+    width: 4vw;
+    height: 7vh;
     cursor: pointer;
-    background-color: white;
-    border: black;
+    background: none;
+    align-items: center;
+    border: none;
 
     img {
       width: 3vw;

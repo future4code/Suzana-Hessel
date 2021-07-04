@@ -8,10 +8,13 @@ const CardsContainer = styled.div`
   height: 57vh;
   border: 2px solid white;
   border-radius: 15px;
-  box-shadow: 5px 5px gray;
   justify-content: center;
   align-items: center;
+  justify-items: center;
   margin-top: 20px;
+  margin-left: 20px;
+  background-color: white;
+ 
 
 
   img {
@@ -26,10 +29,17 @@ const CardsContainer = styled.div`
 
 const InfosCard = styled.div`
   display: block;
-  width: 20vw;
+  width: 22vw;
   height: 15vh; 
   text-align: center ;
+  margin-top: 10px;
   margin-bottom: 10px;
+  background-color: whitesmoke;
+  font-size: 14px;
+  font-weight: bold;
+  
+  
+  
 `;
 
 const ProfileCard = (props) => {

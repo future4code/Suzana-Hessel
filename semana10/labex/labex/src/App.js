@@ -1,15 +1,12 @@
 import React from "react";
 // import axios from "axios";
 // import styled from "styled-components";
-import HomePage from "./pages/HomePage";
-import ApplicationFormPage from "./pages/ApplicationFormPage";
-
+import Router from "./route/Router";
 
  const App = () => {
   return (
     <div >
-      <HomePage/>
-      <ApplicationFormPage/>
+      <Router/>
     </div>
   );
 }

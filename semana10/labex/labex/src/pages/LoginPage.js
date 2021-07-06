@@ -1,8 +1,20 @@
 import React from "react";
 // import axios from "axios";
 // import styled from "styled-components";
+import { useHistory } from "react-router";
 
  const LoginPage = () => {
+   
+  const history = useHistory() 
+
+  const goToAdminPage = () => {
+    history.push("/adminPage")
+  }
+
+  const goToBack = () => {
+    history.push("/")
+  }
+
   return (
     <div >
       <h2>Área do Administrador</h2>
@@ -18,6 +30,8 @@ import React from "react";
             placeholder="senha"
             onChange=""
             />
+            <button onClick={goToAdminPage}>Entrar</button>
+            <button onClick={goToBack}>Voltar</button>
       </label>
     </div>
   );

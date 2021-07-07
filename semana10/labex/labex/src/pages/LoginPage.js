@@ -30,7 +30,7 @@ const LoginPage = () => {
       .then((response) => {
         console.log("Certo: ", response.data.token);
         localStorage.setItem("token", response.data.token);
-        history.push("/");
+        history.push("/admin/trips/list");
       })
       .catch((err) => {
         console.log("Errado: ", err.response);
@@ -66,3 +66,10 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+// "success": true,
+// "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1UkFvcW1DYVRvdWxTbFhFYzhsIiwiZW1haWwiOiJzdWgtYXN0cm9kZXZAZ21haWwuY29tLmJyIiwiaWF0IjoxNjI1Njg3MTgxfQ.3xvMpDu2xQpiPYIS7XXkV3n_UInAVwMS7wc-RB3VFSE",
+// "user": {
+//     "id": "b5RAoqmCaToulSlXEc8l",
+//     "email": "suh-astrodev@gmail.com.br"

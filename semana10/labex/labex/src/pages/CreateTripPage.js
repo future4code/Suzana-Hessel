@@ -7,7 +7,7 @@ const CreateTripPage = () => {
   const history = useHistory();
 
   const goToBack = () => {
-    history.push("/adminPage");
+    history.push("/admin/trips/list");
   };
 
   const goToCreate = () => {

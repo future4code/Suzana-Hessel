@@ -7,7 +7,7 @@ const ApplicationFormPage = () => {
   const history = useHistory();
 
   const goToBack = () => {
-    history.push("/tripList");
+    history.push("/trips/list");
   };
 
   const goToSend = () => {

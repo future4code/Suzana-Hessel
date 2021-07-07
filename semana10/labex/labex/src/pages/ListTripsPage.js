@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
   }
 
   const goToApplicationForm = () => {
-    history.push("/form")
+    history.push("/trips/application")
   }
 
   return (

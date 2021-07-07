@@ -7,11 +7,11 @@ import { useHistory } from "react-router";
    const history = useHistory();
 
    const goToBack = () => {
-     history.push("/loginAdm")
+     history.push("/login")
    }
 
    const goToCreateTrip = () => {
-    history.push("/createTrip")
+    history.push("/admin/trips/create")
   }
 
    const goToLogout = () => {
@@ -19,7 +19,7 @@ import { useHistory } from "react-router";
   }
 
   const goToTripDetais = () => {
-    history.push("/tripDetails")
+    history.push("/admin/trips/:id")
   }
 
 

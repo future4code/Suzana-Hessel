@@ -15,7 +15,7 @@ const Title = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color:#000322;
+  background-color: #000322;
   height: 7vh;
   color: white;
   font-size: 17px;

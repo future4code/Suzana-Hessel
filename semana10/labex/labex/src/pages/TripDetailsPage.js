@@ -5,7 +5,6 @@ import { useHistory } from "react-router";
 import { useEffect } from "react";
 import { BASE_URL } from "../constants/BASE_URL";
 
-
 const useProtectedPage = () => {
   const history = useHistory();
 
@@ -14,12 +13,13 @@ const useProtectedPage = () => {
 
     if (token === null) {
       console.log("Não está logado!!!");
+      alert("Você não está logado!");
       history.push("/login");
     }
   }, []);
 };
 
- const TripDetailsPage = () => {
+const TripDetailsPage = () => {
   const history = useHistory();
 
   useProtectedPage();
@@ -27,14 +27,11 @@ const useProtectedPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get(`${BASE_URL}/trip/b5RAoqmCaToulSlXEc8l`
-        ,
-        {
-          headers: {
-            auth: token
-          }
-        }
-      )
+      .get(`${BASE_URL}/trip/b5RAoqmCaToulSlXEc8l`, {
+        headers: {
+          auth: token,
+        },
+      })
       .then((response) => {
         console.log(response.data);
       })
@@ -43,20 +40,18 @@ const useProtectedPage = () => {
       });
   }, []);
 
-
-
   const goToBack = () => {
-    history.push("/admin/trips/list")
-  }
+    history.push("/admin/trips/list");
+  };
 
   return (
-    <div >
-      Viagem teste 
-      <p>ipsum lorem .....
-      </p>
+    <div>
+      Viagem teste
+      <p>ipsum lorem .....</p>
+      {TripDetailsPage.props = TripDetailsPage}
       <button onClick={goToBack}>Voltar</button>
     </div>
   );
-}
+};
 
 export default TripDetailsPage;

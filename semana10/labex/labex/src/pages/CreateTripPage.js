@@ -1,85 +1,132 @@
-import React from "react";
-// import axios from "axios";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import useForm from "../hooks/UseForm";
 import axios from "axios";
 import { BASE_URL, headers } from "../constants/BASE_URL";
+import useProtectedPage from "../hooks/UseProtectedPage";
+import { KeyboardDatePicker } from "@material-ui/pickers";
 
 const ContainerForms = styled.div`
   display: flex;
   width: 100%;
-  height: 93vh ;
+  height: 93vh;
   flex-direction: column;
-  background-color: violet;
   align-items: center;
   justify-content: center;
   gap: 20px;
 
+  h2 {
+    color: #000322;
+  }
+
   button {
-    width: 15vw;
+    width: 10vw;
     height: 5vh;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: bold;
+    color: #000322;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    :hover {
+      color: white;
+      background-color: #000322;
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px gray;
+    padding: 40px;
+    border: 2px solid #d3d3d3;
+    gap: 20px;
+    filter: opacity(85%);
   }
 
   label {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 50vw;
+    width: 30vw;
   }
 
   input {
-    height: 4vh;
+    border: none;
+    border-bottom: 1px solid #000322;
   }
-
-  select{
-    height: 5vh;
+  select {
+    border: none;
+    border-bottom: 1px solid #000322;
   }
 `;
 
 const CreateTripPage = (props) => {
+  const { form, onChange } = useForm({
+    name: "",
+    planet: "",
+    description: "",
+    durations: "",
+  });
+
+  useProtectedPage();
 
   const history = useHistory();
 
-  const handleClick = (event) => {
-    event.preventDefault()
-    console.log("Viagem adicionada com sucesso *-* ")
+  const [date, setDate] = useState(new Date());
 
-   const body = {
+  const CreateTripForm = (event) => {
+    event.preventDefault();
+    console.log("Viagem adicionada com sucesso *-* ");
+    const formattedDate = `${date.getDate()}/${
+      date.getMonth() + 1
+    }/${date.getFullYear()}`;
 
-    name: "Ano novo em Mercúrio",
-    planet: "Mercúrio",
-    date: "31/12/2019",
-    description: "Venha passar a virada pertinho do Sol!",
-    durationInDays: 7
-   } 
+    const body = {
+      name: form.name,
+      planet: form.planet,
+      date: formattedDate,
+      description: form.description,
+      durationInDays: form.durationInDays,
+    };
 
-   axios
-   .post(`${BASE_URL}/trips`, body, headers)
-   .then((response)=>{
-    console.log("Certo: ", response);
-    alert("Viagem adicionada com sucesso *-* ");
-   })
-   .catch((err)=>{
-    console.log("Errado: ", err.data);
-   })
-
-
-  }
+    axios
+      .post(`${BASE_URL}/trips`, body, headers)
+      .then((response) => {
+        console.log("Certo: ", response);
+        alert("Viagem adicionada com sucesso *-* ");
+      })
+      .catch((err) => {
+        console.log("Errado: ", err.data);
+        alert("Preencha os campos")
+      });
+  };
 
   const goToBack = () => {
     history.push("/admin/trips/list");
   };
 
-  
-
-  
-
   return (
     <ContainerForms>
-      <form onSubmit={handleClick} >
+      <h2>Criar Viagem</h2>
+      <form onSubmit={CreateTripForm}>
         <label>
-          <input value="" placeholder="Nome" onChange="" required />
-          <select>
+          <input
+            name="name"
+            type="name"
+            value={form["name"]}
+            placeholder="Nome"
+            onChange={onChange}
+            required
+          />
+          <select name="planet" value={form["planet"]} onChange={onChange}>
             <option>Escolha um Planeta</option>
             <option>Mercúrio</option>
             <option>Vênus</option>
@@ -91,13 +138,33 @@ const CreateTripPage = (props) => {
             <option>Netuno</option>
             <option>Plutão</option>
           </select>
-          <input type="date" value="" placeholder="Data" onChange="" />
-          <input value="" placeholder="Descrição" onChange="" />
-          <input value="" placeholder="Duração em Dias" onChange="" />
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="dd/MM/yyyy"
+            margin="normal"
+            label="Data"
+            value={date}
+            onChange={(date) => setDate(date)}
+          />
+          <input
+            name="description"
+            type="text"
+            value={form["description"]}
+            placeholder="Descrição"
+            onChange={onChange}
+          />
+          <input
+            name="duration"
+            type="number"
+            value={form["duration"]}
+            placeholder="Duração em Dias"
+            onChange={onChange}
+          />
         </label>
+        <button onClick={CreateTripForm}>Criar</button>
+        <button onClick={goToBack}>Voltar</button>
       </form>
-      <button onClick={goToBack}>Voltar</button>
-      <button onClick={CreateTripPage}>Criar</button>
     </ContainerForms>
   );
 };

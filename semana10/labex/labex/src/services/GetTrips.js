@@ -9,7 +9,7 @@ const GetTrips = () => {
     axios
       .get(`${BASE_URL}/trips`)
       .then((response) => {
-        console.log(response.data.trips);
+        // console.log(response.data.trips);
         setTrips(response.data.trips);
       })
       .catch((err) => {

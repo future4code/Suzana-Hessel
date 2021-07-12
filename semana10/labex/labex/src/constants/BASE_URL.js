@@ -6,3 +6,8 @@ export  const headers = {
     }
 };
 
+export  const headersToken = {
+    headers: {
+        auth: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1UkFvcW1DYVRvdWxTbFhFYzhsIiwiZW1haWwiOiJzdWgtYXN0cm9kZXZAZ21haWwuY29tLmJyIiwiaWF0IjoxNjI1Njg3MTgxfQ.3xvMpDu2xQpiPYIS7XXkV3n_UInAVwMS7wc-RB3VFSE"
+    }
+};

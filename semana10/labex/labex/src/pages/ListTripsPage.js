@@ -6,31 +6,49 @@ import { BASE_URL } from "../constants/BASE_URL";
 import { useState } from "react";
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-background-color: orange;
-width: 100%;
-height: 220vh;
-gap: 20px;
-color: white;
-align-items: center;
-background-image: url("https://i.pinimg.com/originals/d8/d7/05/d8d705bfd0cd2b1e6a20beabb0f0546a.jpg");
-background-repeat: no-repeat;
-background-size: 110% 220vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 220vh;
+  gap: 15px;
+  color: white;
+  align-items: center;
+  background-image: url("https://i.pinimg.com/originals/d8/d7/05/d8d705bfd0cd2b1e6a20beabb0f0546a.jpg");
+  background-repeat: no-repeat;
+  background-size: 110% 225vh;
 
-`
+  button {
+    width: 10vw;
+    height: 5vh;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px;
+    font-weight: bold;
+    color: #000322;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+
+    :hover {
+      color: white;
+      background-color: #000322;
+      cursor: pointer;
+      border: none;
+    }
+  }
+`;
 
 const ContainerTrips = styled.div`
-display: flex;
-flex-direction: column;
-width: 45vw;
-border-radius: 10px;
-padding: 30px;
-background-color: #000322;
-filter: opacity(85%);
-
-
-`
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #000322;
+  filter: opacity(85%);
+`;
 
 const ListTripsPage = () => {
   const history = useHistory();
@@ -74,8 +92,8 @@ const ListTripsPage = () => {
           </ContainerTrips>
         );
       })}
-      <button onClick={goToBack}>Voltar</button>
       <button onClick={goToApplicationForm}>Inscreva-se</button>
+      <button onClick={goToBack}>Voltar</button>
     </Container>
   );
 };

@@ -9,11 +9,14 @@ import LoginPage from "../pages/LoginPage";
 import ApplicationFormPage from "../pages/ApplicationFormPage";
 import AdminHomePage from "../pages/AdminHomePage";
 import CreateTripPage from "../pages/CreateTripPage";
-import TripDetailsPage from "../pages/TripDetailsPage";
+import TripDetailsPage from "../pages/TripDetailsPage/TripDetailsPage";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from '@date-io/date-fns';
 
 const Router = () => {
   return (
     <div>
+       <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <BrowserRouter>
         <Switch>
           <Route exact path={"/"}>
@@ -42,6 +45,7 @@ const Router = () => {
           </Route>
         </Switch>
       </BrowserRouter>
+      </MuiPickersUtilsProvider>
     </div>
   );
 };

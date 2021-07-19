@@ -24,7 +24,7 @@ const ContainerApp = styled.div`
   max-width: 25vw;
   max-height: 80vh;
   align-items: center;
-  background-image: url(${"https://swall.teahub.io/photos/small/327-3276854_wallpaper-galaxy-and-planet-image-space-aesthetic-iphone.jpg"});
+  background-image: url(${"https://wallpaperaccess.com/full/1510313.jpg"});
 `
 const ButtonChoice = styled.div`
   display: flex;

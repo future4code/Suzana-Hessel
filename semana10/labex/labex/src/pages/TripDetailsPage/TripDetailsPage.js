@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router";
 import GetTripDetail from "../../services/GetTripDetail";
@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import CandidatesList from "./CandidatesList";
 import { BASE_URL, headers } from "../../constants/BASE_URL";
 import axios from "axios"
+import { DomainPropTypes } from "@material-ui/pickers/constants/prop-types";
 
 const TripCard = styled.div`
 width: 100%;
@@ -43,7 +44,7 @@ button{
 
 `
 
-const TripDetailsPage = () => {
+const TripDetailsPage = async () => {
   useProtectedPage();
 
   const history = useHistory();
@@ -67,8 +68,8 @@ const TripDetailsPage = () => {
     })
   }
 
-  const tripDetail = GetTripDetail(params.id);
-
+  const tripDetail = await GetTripDetail(params.id);
+  console.log("TRIP DATAIL", tripDetail)
   return (
     <TripCard>
       <TripInfoCards
@@ -77,6 +78,11 @@ const TripDetailsPage = () => {
         descriptions={tripDetail.descriptions}
         date={tripDetail.date}
         durationsInDays={tripDetail.durationsInDays}
+      />
+      <h2>Lista de Candidatos</h2>
+      <CandidatesList
+      candidates={tripDetail.candidates}
+      decideCandidate={decideCandidate}
       />
       <button onClick={goToBack}>Voltar</button>
     </TripCard>

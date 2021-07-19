@@ -4,7 +4,7 @@ import { useState } from "react";
 import useProtectedPage from "../hooks/UseProtectedPage";
 
 const GetTripDetail = (id) => {
-  const [tripDetail, setTripDetail] = useState([]);
+  const [tripDetail, setTripDetail] = useState();
   console.log("id", id);
 
   useProtectedPage();
@@ -12,13 +12,13 @@ const GetTripDetail = (id) => {
   axios
     .get(`${BASE_URL}/trip/${id}`, headersToken)
     .then((response) => {
-      console.log(response);
+      console.log("RESPONSE DA GET TRIP DAETAIL", response.data.trip);
       setTripDetail(response.data.trip);
     })
     .catch((err) => {
       console.log(err);
     });
-
+  console.log("TRIP DATAIL NA GET TRIP", tripDetail);
   return tripDetail;
 };
 export default GetTripDetail;

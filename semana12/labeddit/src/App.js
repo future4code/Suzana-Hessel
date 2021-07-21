@@ -1,12 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
+import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components"
-import Routes from "./Routes/routes"
+import Header from "./components/Header";
+import Router from "./routes/Router"
+
+const ContainerApp = styled.div`
+width: 100%;
+height:100vh;
+background-color: orchid;
+
+`
 
 const App = () => {
+  const token = localStorage.getItem("token")
+  const [rightButtonText, setRightButtonText] = useState(token ? "Logout" : "Login")
+
   return (
-    <div>
-     <Routes/>
-    </div>
+    <ContainerApp>
+      <BrowserRouter>
+      <Header rightButtonText={rightButtonText} setRightButtonText={setRightButtonText}/>
+     <Router rightButtonText={rightButtonText} setRightButtonText={setRightButtonText} />
+     </BrowserRouter>
+    </ContainerApp>
   );
 }
 

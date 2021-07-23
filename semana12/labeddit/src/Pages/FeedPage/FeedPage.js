@@ -47,6 +47,7 @@ const FeedPage = () => {
     return (
       <PostCard
       key={post.id}
+      id={post.id}
       body={post.body}
       username={post.username}
       title={post.title}

@@ -4,10 +4,13 @@ import axios from "axios";
  
  export const createPostVote = (body, id) => {
     // setIsLoading(true);
+    console.log("BODY", body, "ID", id)
     axios
-      .post(`${BASE_URL}/posts/${id}/votes`, body, headers)
+      .post(`${BASE_URL}/posts/${id}/votes`, body, {
+        headers: headers
+      })
       .then((res) => {
-        console.log(res.data.message);
+        console.log(res);
         // setIsLoading(false);
       })
       .catch((err) => {
@@ -18,10 +21,14 @@ import axios from "axios";
 
 
   export const changePostVote = (body, id) => {
+    console.log("BODY", body, "ID", id)
+
     axios
-    .put(`${BASE_URL}/posts${id}/votes`, body, headers)
+    .put(`${BASE_URL}/posts/${id}/votes`, body, {
+      headers: headers
+    })
     .then((res) => {
-      console.log("CHANGEEEE AQUIIII", res.data.message)
+      console.log(res)
     })
     .catch((err) => {
       console.log(err)

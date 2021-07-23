@@ -10,11 +10,9 @@ import { Link } from "react-router-dom";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import { createPostVote, changePostVote } from "../services/posts";
 
-
 const PostCard = (props) => {
-const voteSum = parseInt(props.voteSum, 10)
-  const [votes, setVotes] = useState(voteSum, {direction: 0});
-  
+  const voteSum = parseInt(props.voteSum, 10);
+  const [votes, setVotes] = useState(voteSum, { direction: 0 });
 
   const onClickUp = () => {
     const id = props.id;
@@ -24,22 +22,24 @@ const voteSum = parseInt(props.voteSum, 10)
 
     createPostVote(body, id);
     setVotes((x) => {
-        return x + 1 
-    })
+      return x + 1;
+    });
   };
 
   const onClickDown = () => {
-      const id = props.id;
-      const body = {
-          direction: -1,
-      }
+    const id = props.id;
+    console.log("ID", props.id)
+    const body = {
+      direction: -1,
+    };
 
-    changePostVote(body, id)
-    setVotes((x) => {
-        return x - 1 
-    })
-
-  }
+    changePostVote(body, id);
+    if (votes > 0) {
+      setVotes((x) => {
+        return x - 1;
+      });
+    }
+  };
   return (
     <ContainerPostUser key={props.id}>
       {props.username}
@@ -56,10 +56,14 @@ const voteSum = parseInt(props.voteSum, 10)
       {/* <div>{post.userId}</div> */}
       <ContainerReactUser>
         <div>
-          <button onClick={onClickUp}><ThumbUpIcon /></button>
+          <button onClick={onClickUp}>
+            <ThumbUpIcon />
+          </button>
         </div>
         <div>
-          <button onClick={onClickDown}><ThumbUpIcon /></button>
+          <button onClick={onClickDown}>
+            <ThumbUpIcon />
+          </button>
         </div>
         <Vote>
           <span>{votes}curtidas</span>

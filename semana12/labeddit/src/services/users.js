@@ -13,7 +13,7 @@ export const login = (body, clear, history, setRightButtonText) => {
       setRightButtonText("Logout");
     })
     .catch((err) => {
-      alert(err.response.data);
+      console.error(err)
     });
 };
 

@@ -23,7 +23,7 @@ const Router = ({rightButtonText, setRightButtonText}) => {
         <Route exact path={"/login/signup/feed"}>
           <FeedPage />
         </Route>
-        <Route exact path={"/feed/post"}>
+        <Route exact path={"/login/feed/post/:id"}>
           <PostPage />
         </Route>
       </Switch>

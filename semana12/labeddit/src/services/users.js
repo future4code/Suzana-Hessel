@@ -1,6 +1,7 @@
-import { BASE_URL, headers } from "../constants/urls";
+import { BASE_URL } from "../constants/urls";
 import axios from "axios";
 import { goToFeed, goToSignupFeed } from "../routes/coordinator";
+
 
 export const login = (body, clear, history, setRightButtonText) => {
   axios
@@ -30,3 +31,5 @@ export const signup = (body, clear, history) => {
       alert("Erro no cadastro");
     });
 };
+
+

@@ -4,6 +4,8 @@ import { ContainerLogin } from "./styled";
 import useForm from "../../hooks/useForm";
 import {login} from "../../services/users"
 import {goToSignup} from "../../routes/coordinator"
+import { TextField, Button } from "@material-ui/core";
+
 
 const LoginPage = ({rightButtonText, setRightButtonText}) => {
 
@@ -16,12 +18,11 @@ const LoginPage = ({rightButtonText, setRightButtonText}) => {
     
   };
 
-
   return (
     <ContainerLogin>
       <h2>Login</h2>
       <form onSubmit={onSubmitForm} >
-        <input
+        <TextField
           type="email"
           name={"email"}
           value={form.email}
@@ -29,7 +30,7 @@ const LoginPage = ({rightButtonText, setRightButtonText}) => {
           placeholder="e-mail"
           required
         />
-        <input
+        <TextField
           type="password"
           name={"password"}
           value={form.password}
@@ -37,11 +38,10 @@ const LoginPage = ({rightButtonText, setRightButtonText}) => {
           placeholder="senha"
           required
         />
-        <button onClick={onSubmitForm} type={"submit"}>
-          Entrar
-        </button>
-        
-        <button onClick={() => goToSignup(history)}><p>NÃO POSSUI CONTA? CADASTRE-SE</p></button>
+        <Button onClick={onSubmitForm} type={"submit"}>ENTRAR</Button>
+        <div>
+        <Button onClick={() => goToSignup(history)}><p>NÃO POSSUI CONTA? CADASTRE-SE</p></Button>
+        </div>
       </form>
     </ContainerLogin>
   );

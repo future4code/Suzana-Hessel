@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { goToLogin, goToHome } from "../routes/coordinator";
+import { goToLogin, goToFeed } from "../routes/coordinator";
 
 const ContainerHeader = styled.div`
 
@@ -43,7 +43,7 @@ const Header = ({rightButtonText, setRightButtonText}) => {
 
   return (
     <ContainerHeader>
-      {/* <button onClick={ () => goToHome(history)}><h1>LabEddit</h1></button> */}
+      <button onClick={ () => goToFeed(history)}><h1>LabEddit</h1></button>
       <h1>LabEddit</h1>
       
       <button onClick={rightButtonAction}>{rightButtonText}</button>

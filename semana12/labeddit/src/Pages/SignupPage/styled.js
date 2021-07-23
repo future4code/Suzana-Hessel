@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const ContainerLogin = styled.div`
+export const ContainerSignup = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 50vh;
-  flex-direction: column;
+  background-color: yellow;
   justify-content: center;
   align-items: center;
-  background-color: palegoldenrod;
 
   form {
     display: flex;
@@ -36,6 +36,3 @@ export const ContainerLogin = styled.div`
     font-size: 12px;
   }
 `;
-
-
-

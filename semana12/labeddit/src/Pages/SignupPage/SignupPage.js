@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signup } from "../../services/users";
+import {ContainerSignup} from "./styled"
+import { TextField } from "@material-ui/core";
 
 const SignupPage = () => {
-
 
   const { form, onChange, clear } = useForm({
     username: "",
@@ -22,33 +22,38 @@ const SignupPage = () => {
   };
 
   return (
-    <div>
+    <ContainerSignup>
       <h2>Cadastre-se</h2>
       <form onSubmit={onSubmitForm}>
-        <input
+        <TextField
           name="username"
           type="username"
           value={form.username}
           onChange={onChange}
           placeholder="Nome de usuário"
+          required
         />
-        <input
+        <TextField
          name="email"
           type="email"
           value={form.email}
           onChange={onChange}
           placeholder="E-mail"
+          required
         />
-        <input
+        <TextField
         name="password"
           type="password"
           value={form.password}
           onChange={onChange}
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          title={"A senha deve ter no mínimo oito caracteres, pelo menos uma letra e um número!"}
           placeholder="Senha"
+          required
         />
-        <button onClick={onSubmitForm}>Cadastrar</button>
+        <button onClick={onSubmitForm}>CADASTRAR</button>
       </form>
-    </div>
+    </ContainerSignup>
   );
 };
 export default SignupPage;

@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 import useProtectedPage from "../../hooks/useProtectedPage";
+import useForm from "../../hooks/useForm";
 import { BASE_URL, headers } from "../../constants/urls";
 import axios from "axios";
+import { TextField } from "@material-ui/core";
 import {
   ContainerFeed,
   ContainerPost,
-  ContainerPostUser,
-  ContainerReactUser,
   ButtonPostar,
-  ButtonUser,
-  Comment,
+ 
 } from "./styled";
 import { Button } from "@material-ui/core";
 import PostCard from "../../components/PostCard";
+import { createPost } from "../../services/posts";
 
 const FeedPage = () => {
   useProtectedPage();
   const [posts, setPosts] = useState([]);
-
+  const { form, onChange, clear } = useForm({
+    title: "",
+    body: "",
+  });
 
   useEffect(() => {
     getPosts();
-  });
+  }, [posts]);
 
   const getPosts = () => {
     axios
@@ -33,70 +36,61 @@ const FeedPage = () => {
         headers: headers,
       })
       .then((res) => {
-        // console.log("AQUIIIII RES", res);
-        // console.log("AQUIIIII", res.data);
         setPosts(res.data);
       })
       .catch((err) => {
         console.log("ERROOO", err);
-    
       });
+  };
+
+  const onClickCreatePost = () => {
+  if(form.title === "" || form.body === ""){
+    return alert("É necessário o preenchimento dos campos")
+  }
+    createPost(form, clear);
   };
 
   const renderPosts = posts.map((post) => {
     return (
       <PostCard
-      key={post.id}
-      id={post.id}
-      body={post.body}
-      username={post.username}
-      title={post.title}
-      voteSum={post.voteSum}
-      commentCount={post.commentCount}
-      userVote={post.userVote}
+        key={post.id}
+        id={post.id}
+        body={post.body}
+        username={post.username}
+        title={post.title}
+        voteSum={post.voteSum}
+        commentCount={post.commentCount}
+        userVote={post.userVote}
       />
-      
     );
   });
 
   return (
     <ContainerFeed>
       <h2>Feed</h2>
-      {renderPosts}
       <ContainerPost>
-        <p>Escreva seu Post</p>
-        <ButtonPostar>
-          <Button>Postar</Button>
-        </ButtonPostar>
+        <form onSubmit={onClickCreatePost}>
+          <TextField
+            name="title"
+            type="title"
+            value={form.title}
+            onChange={onChange}
+            placeholder="Título"
+          />
+          <TextField
+            name="body"
+            type="text"
+            value={form.body}
+            onChange={onChange}
+            placeholder="Escreva seu Post"
+          />
+          <ButtonPostar>
+            <Button onClick={onClickCreatePost}>Postar</Button>
+          </ButtonPostar>
+        </form>
       </ContainerPost>
-      <ContainerPostUser>
-        <p>Nome de Usuário</p>
-        <p>Texto do post</p>
-        <ContainerReactUser>
-          <ButtonUser>
-            <Button>Curtir</Button>
-            <Button>Descurtir</Button>
-          </ButtonUser>
-          <Comment>
-            <p>0 comentários</p>
-          </Comment>
-        </ContainerReactUser>
-      </ContainerPostUser>
-      <ContainerPostUser>
-        <p>Nome de Usuário</p>
-        <p>Texto do post</p>
-        <ContainerReactUser>
-          <ButtonUser>
-            <Button>Curtir</Button>
-            <Button>Descurtir</Button>
-          </ButtonUser>
-          <Comment>
-            <p>0 comentários</p>
-          </Comment>
-        </ContainerReactUser>
-      </ContainerPostUser>
+      {renderPosts}
     </ContainerFeed>
   );
 };
 export default FeedPage;
-

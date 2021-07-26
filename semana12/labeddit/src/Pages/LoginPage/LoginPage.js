@@ -1,10 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { ContainerLogin } from "./styled";
+import { ContainerLogin, BoxLogin, ButtonSignup  } from "./styled";
 import useForm from "../../hooks/useForm";
 import {login} from "../../services/users"
 import {goToSignup} from "../../routes/coordinator"
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button} from "@material-ui/core";
+import LockIcon from '@material-ui/icons/Lock';
 
 
 const LoginPage = ({rightButtonText, setRightButtonText}) => {
@@ -20,6 +21,8 @@ const LoginPage = ({rightButtonText, setRightButtonText}) => {
 
   return (
     <ContainerLogin>
+      <BoxLogin>
+        <LockIcon/>
       <h2>Login</h2>
       <form onSubmit={onSubmitForm} >
         <TextField
@@ -39,10 +42,11 @@ const LoginPage = ({rightButtonText, setRightButtonText}) => {
           required
         />
         <Button onClick={onSubmitForm} type={"submit"}>ENTRAR</Button>
-        <div>
+        <ButtonSignup>
         <Button onClick={() => goToSignup(history)}><p>NÃO POSSUI CONTA? CADASTRE-SE</p></Button>
-        </div>
+        </ButtonSignup>
       </form>
+      </BoxLogin>
     </ContainerLogin>
   );
 };

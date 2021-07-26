@@ -4,36 +4,25 @@ import useRequestData from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
 import { ContainerComments, ContainerPost } from "./styled";
+import CommentCard from "../../components/CommentCard";
 
+const PostPage = (props) => {
+  useProtectedPage();
+  const params = useParams();
 
-const PostPage = () => {
- useProtectedPage()
+  const comments = useRequestData(
+    [],
+    `${BASE_URL}/posts/${params.id}/comments`
+  );
+  console.log("Comments", comments);
 
- const params = useParams();
- console.log(params)
-
- const comments = useRequestData([],`${BASE_URL}/posts/${params.id}/comments`)
-
- const commentsCards = comments.map((comment) => {
-   return (
-     <div key={comment.id}>
-       <div>{comment.body}</div>
-       <div>{comment.createdAt}</div>
-       {/* <div>{comment.useId}</div>
-       <div>{comment.postId}</div> */}
-       <div>{comment.voteSum}</div>
-       <div>{comment.useVote}</div>
-     </div>
-   )
- })
-
- return (
+  const commentsCards = comments.map((comment) => {
+    return <CommentCard comment={comment} />;
+  });
+  return (
     <ContainerPost>
-      <h2>Post</h2>
-      <ContainerComments>
-      {commentsCards}
-      </ContainerComments>
-     
+      <h2>Comentários</h2>
+      <ContainerComments>{commentsCards}</ContainerComments>
     </ContainerPost>
   );
 };

@@ -4,25 +4,21 @@ import styled from "styled-components"
 export const ContainerPost = styled.div`
 display: flex;
 flex-direction: column;
-width: 40vw;
-height: 20vh;
-border: 2px solid black;
+width: 98vw;
+height: 200vh;
 align-items: center;
-justify-content: center;
-align-content: center;
-justify-items: center;
 
+h2{
+    color: #6600cc;
+}
 `
 
 export const ContainerComments = styled.div`
 display: flex;
 flex-direction: column;
-width: 40vw;
-height: 20vh;
-border: 2px solid black;
+width: 90vw;
+height: 70vh;
 border-radius: 10px;
-align-items: center;
-justify-content: center;
 background-color: white;
 
 `

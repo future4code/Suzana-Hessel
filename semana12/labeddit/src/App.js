@@ -6,8 +6,9 @@ import Router from "./routes/Router"
 
 const ContainerApp = styled.div`
 width: 100%;
-height:500vh;
-background-color: orchid;
+height: 100vh;
+background-color: white;
+
 
 `
 

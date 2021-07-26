@@ -2,8 +2,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signup } from "../../services/users";
-import {ContainerSignup} from "./styled"
-import { TextField } from "@material-ui/core";
+import {ContainerSignup, BoxSignup, ButtonSignup} from "./styled"
+import { TextField , Button} from "@material-ui/core";
 
 const SignupPage = () => {
 
@@ -23,6 +23,7 @@ const SignupPage = () => {
 
   return (
     <ContainerSignup>
+      <BoxSignup>
       <h2>Cadastre-se</h2>
       <form onSubmit={onSubmitForm}>
         <TextField
@@ -51,8 +52,11 @@ const SignupPage = () => {
           placeholder="Senha"
           required
         />
-        <button onClick={onSubmitForm}>CADASTRAR</button>
+        <ButtonSignup>
+        <Button onClick={onSubmitForm}>CADASTRAR</Button>
+        </ButtonSignup>
       </form>
+      </BoxSignup>
     </ContainerSignup>
   );
 };

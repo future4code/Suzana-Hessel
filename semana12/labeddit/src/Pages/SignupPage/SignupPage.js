@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { signup } from "../../services/users";
@@ -13,10 +13,14 @@ const SignupPage = () => {
     password: "",
   });
 
+  useEffect(() => {
+    onSubmitForm()
+  })
+
   const history = useHistory();
 
-  const onSubmitForm = (event) => {
-    event.preventDefault();
+  const onSubmitForm = () => {
+
     console.log("FORM", form)
     signup(form, clear, history);
   };

@@ -1,0 +1,14 @@
+{
+  "name": "template-node-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start1": "clear && node ./src/exercicios/ex1.js ",
+    "start2": "clear && node ./src/exercicios/ex2.js "
+  },
+  "keywords": [],
+  "author": "Suzana Hessel",
+  "license": "ISC"
+}
+

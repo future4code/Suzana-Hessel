@@ -20,31 +20,69 @@ console.log(meuNumero)
 
 //c)
 
-type pessoa ={
+// type pessoa ={
+//     nome: string,
+//     idade: number,
+//     corFavorita: string
+// }
+
+// const suzana : pessoa = {
+// nome: "Suzana",
+// idade: 28,
+// corFavorita: "roxo"
+// }
+
+// const astrodev: pessoa = {
+// nome: "Astrodev",
+// idade: 30, 
+// corFavorita: 'laranja',
+// }
+
+// const botinho : pessoa = {
+// nome: "Bot",
+// idade: 30, 
+// corFavorita: 'gray',
+// }
+
+// console.log(suzana, botinho, astrodev)
+
+
+//d)
+
+type pessoa = {
     nome: string,
     idade: number,
-    corFavorita: string
+    class: CorFavorita
 }
+
+enum CorFavorita {
+    VIOLETA = "VIOLETA",
+    ANIL = "ANIL",
+    AZUL = "AZUL",
+    VERDE = "VERDE",
+    AMARELO = "AMARELO",
+    LARANJA = "ALARANJA",
+    VERMELHO = "VERMELHO"
+
+}
+
+
 const suzana : pessoa = {
 nome: "Suzana",
 idade: 28,
-corFavorita: "roxo"
+class: CorFavorita.VIOLETA
 }
 
 const astrodev: pessoa = {
 nome: "Astrodev",
 idade: 30, 
-corFavorita: 'laranja',
+class: CorFavorita.AMARELO
 }
 
 const botinho : pessoa = {
 nome: "Bot",
 idade: 30, 
-corFavorita: 'gray',
+class: CorFavorita.VERDE
 }
 
 console.log(suzana, botinho, astrodev)
-
-
-//d)
-

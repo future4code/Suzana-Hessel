@@ -42,23 +42,25 @@ app.get('/countries/search', (req: Request, res: Response) => {
     let result: country[] = countries
 
     try{
+
         if(!req.query.name && !req.query.capital && !req.query.continent){
             throw new Error("Parametro inválido")
         }
+
         if(req.query.name){
-            result = result.filter((country) => {
+            result = result.filter((country) => 
                 country.name.includes(req.query.name as string)
-            })
+            )
         }
         if(req.query.capital){
-            result = result.filter((country) => {
+            result = result.filter((country) => 
                 country.capital.includes(req.query.capital as string)
-            })
+            )
         }
         if(req.query.continent){
-            result = result.filter((country) => {
+            result = result.filter((country) => 
                 country.continent.includes(req.query.continent as string)
-            })
+            )
         }
         res.status(200).send(result)
     }
@@ -71,13 +73,13 @@ app.get('/countries/search', (req: Request, res: Response) => {
 
  /*exercicio4 - editar país   */
 
- app.post('/countries/:id', (req:Request, res:Response) => {
+ app.post('/countries/:id', (req: Request, res: Response) => {
      let errorCode: number = 400
      
     try{
-         const countryIndex: number = countries.findIndex((country) => {
+         const countryIndex: number = countries.findIndex((country) => 
              country.id === Number(req.params.id)
-         })
+         )
 
          if(countryIndex === -1){
              errorCode = 404
@@ -86,18 +88,19 @@ app.get('/countries/search', (req: Request, res: Response) => {
          }
          if (!req.body.name && !req.body.capital) {
             throw new Error("Invalid Parameters");
-          }
+        }
         if(req.body.name){
             countries[countryIndex].name = req.body.name
         }
         if(req.body.capital){
             countries[countryIndex].capital = req.body.capital
         }
-         res.status(200).send("País editado com sucesso");
+         
+    res.status(200).send("País editado com sucesso");
 
      }catch(error){
          console.log(error)
-         res.status(errorCode).send(error)
+         res.status(errorCode).send(error.message)
      }
  
  })

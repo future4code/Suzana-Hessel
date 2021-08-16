@@ -1,0 +1,12 @@
+{
+  "name": "template-node-npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start3": "clear && node ./src/packages/exercicio3/ex3.js "
+  },
+  "keywords": [],
+  "author": "Suzana Hessel",
+  "license": "ISC",
+  "description": ""
+}

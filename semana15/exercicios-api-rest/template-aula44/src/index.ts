@@ -131,13 +131,13 @@ como por exemplo, nome.
 
 b. Você consegue pensar em um jeito de garantir que apenas `types` válidos sejam 
 utilizados?
-**Creio que é possível especifica cada type para que sejam utilizados somente eles.
+**Creio que é possível especificar cada type para que sejam utilizados somente eles.
+Validação.
 
 */
 
 
 /*
-
 exercicio 3
 
 Vamos agora praticar o uso de buscas mais variáveis. Faça agora um endpoint de busca 
@@ -145,14 +145,150 @@ que encontre um usuário buscando por nome.
 
 *a. Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui?*
 
+**Query params
+
 b. Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário 
 tenha sido encontrado.
-
 */
 
 
+/*
+exercicio 4
 
+Fizemos algumas buscas no nosso conjunto de itens, agora é 
+hora de **adicionar** coisas. Comecemos criando um usuário na nossa lista. 
+Crie um endpoint que use o método `POST` para adicionar um item ao nosso 
+conjunto de usuários.
+*/
+
+app.post("/users/crate", (req: Request, res: Response) => {
+  try{
+    const {name, email, age } = req.body
+    let type = req.body.type as string
+
+    if (!name || !email || !age || !type){
+      throw new Error("Missing data in body to create user")
+    }
+    if(typeof name !== "string"){
+      throw new Error("Invalid name")
+    }
+    if(typeof email !== "string"){
+      throw new Error("invalid email")
+    }
+    if(typeof age !== "number"){
+      throw new Error("Invalid age")
+    }
+
+    type = type.toUpperCase()
+    if (!(type in USER_ROLES)) {
+      throw new Error("Invalid type")
+    }
+
+    users.forEach(user => {
+      if (user.email === email) {
+        throw new Error("Email already exists")
+      }
+    })
+
+    const newUser: User = {
+      id: users.length,
+      name,
+      email,
+      age,
+      type: type === USER_ROLES.NORMAL
+      ? USER_ROLES.NORMAL
+      : USER_ROLES.ADMIN
+    }
+
+    users.push(newUser)
+
+    res.status(200).send({
+      message: "user create successfuly",
+      user: newUser
+    })
+
+  }catch (error){
+
+  }
+})
 
 app.listen(3003, () => {
   console.log('Server is running at port 3003')
+})
+
+
+
+/*
+a. Mude o método do endpoint para `PUT`. O que mudou?
+A funcionalidade não mudou porque quem dita o que ocorre é o código no handler, 
+o que muda é a semântica do verbo/método na documentação da API e se ela segue os 
+padrões estabelecidos pela comunidade.
+*/
+
+app.put("/users/:id", (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id)
+
+    if (isNaN(id)) {
+      throw new Error("Invalid id")
+    }
+
+    users.forEach(user => {
+      if (user.id === id) {
+        user.name += "-ALTERADO"
+        return res.status(200).end()
+      }
+    })
+    res.status(204).send("User not found")
+  } catch (err) {
+    res.status(400).send(err.message)
+  }
+})
+
+/*
+b. Você considera o método `PUT` apropriado para esta transação? Por quê?
+  Não, porque a convenção dita que novos itens em entidades sejam aplicados pelo POST, 
+  enquanto PUT e PATCH sejam utilizados para edição completa e parcial, respectivamente
+
+*/
+
+app.patch("/users/:id", (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id)
+
+    if (isNaN(id)) {
+      throw new Error("Invalid id")
+    }
+
+    users.forEach(user => {
+      if (user.id === id) {
+        user.name += "-REALTERADO"
+        return res.status(200).end()
+      }
+    })
+    res.status(204).send("User not found")
+  } catch (err) {
+    res.status(400).send(err.message)
+  }
+})
+
+app.delete("/users/:id", (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id)
+
+    if (isNaN(id)) {
+      throw new Error("Invalid id")
+    }
+
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id === id) {
+        users.splice(i, 1)
+        return res.status(200).end()
+      }
+    }
+
+    res.status(204).send("User not found")
+  } catch (err) {
+    res.status(400).send(err.message)
+  }
 })

@@ -32,3 +32,13 @@ export type criaEstudanteInput = {
     hobbies: string[],
     turma_id: number
 }
+
+export type criaDocenteInput = {
+    id: number,
+    nome: string,
+    email: string,
+    data_nasc: number,
+    especialidades: string[],
+    turma_id: number,
+    
+}

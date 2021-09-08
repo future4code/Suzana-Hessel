@@ -7,10 +7,10 @@ config()
 export class Authenticator{
 
     public generateToken = (
-        playload: authenticationData
+        payload: authenticationData
     )=>{
         return sign(
-            playload,
+            payload,
             process.env.JWT_KEY,
             { expiresIn: "id"}
         )

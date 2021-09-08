@@ -12,14 +12,14 @@ export default async function createUser(
 
       const { name, nickname, email, password } = req.body
 
-      if (!name || !nickname || !email || !password ) {
+      if (!name || !nickname || !email || email.indexOf("@") === -1 || !password ) {
          res.statusCode = 422
-         throw new Error("Preencha os campos 'name', 'nickname' e 'email'")
+         throw new Error("Preencha os campos 'name', 'nickname' e 'email ' corretamente")
       }
 
       if (password.length < 6) {
          res.statusCode = 422
-         throw new Error("Preencha os campos 'name', 'nickname' e 'email'")
+         throw new Error("Preencha os campos 'name', 'nickname' e 'email' corretamente ")
       }
 
       const [user] = await connection('ToDoListUser') //está assim: ToDoListUser, no meu banco

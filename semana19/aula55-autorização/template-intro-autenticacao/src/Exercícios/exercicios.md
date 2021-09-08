@@ -30,7 +30,7 @@ b. CREATE TABLE User (
 )
 
 c. 
-const userTbaleName =  "User"
+const userTableName =  "User"
  
 const createUser = async (
     id: string,
@@ -43,7 +43,7 @@ const createUser = async (
         email,
         password
     })
-    .into(userTbaleName)
+    .into(userTableName)
 }
 
 EXERCICIO 3 :

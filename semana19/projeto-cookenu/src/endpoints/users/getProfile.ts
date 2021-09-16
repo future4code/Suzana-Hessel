@@ -35,7 +35,7 @@ export default async function getProfile(
       email: user.email,
     });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
 
     if (res.statusCode === 200) {
       res.status(500).send("Internal server error");

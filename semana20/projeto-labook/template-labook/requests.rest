@@ -1,0 +1,41 @@
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Rose",
+    "email": "rose@gmail.com",
+    "password": "123456rose",
+    "role": "NORMAL"
+}
+
+###
+# @name login
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "rose@gmail.com",
+    "password": "123456rose"
+}
+
+
+###
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+Authorization: {{login.response.body.token}}
+
+{
+    "photo": "IMG.PNG",
+    "description": "Hello everybody!!",
+    "type": "normal",
+    "authorId": "bd32c573-a52a-45a1-a143-91a36c764446"
+}
+
+###
+
+http://localhost:3003/posts/399f1772-e534-456a-9987-2ac2ffbb0c48
+Authorization: {{login.response.body.token}}
+
+

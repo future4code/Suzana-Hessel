@@ -1,7 +1,7 @@
 {
    "name": "resolvendo-problemas",
    "version": "1.0.0",
-   "main": "index.js",
+   "main": "index.ts",
    "scripts": {
       "hash-tables": "clear && tsnd --transpile-only --ignore-watch node_modules src/hash_tables",
       "exercise1": "clear && tsnd --transpile-only --ignore-watch node_modules src/exercise1",

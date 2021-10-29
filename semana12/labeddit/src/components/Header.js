@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { goToLogin, goToFeed } from "../routes/coordinator";
 import { Button } from "@material-ui/core";
+
 const ContainerHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -21,7 +22,7 @@ const ContainerHeader = styled.div`
     background-color: #009999;
     border: none;
     :hover {
-      background: linear-gradient(to right, #6600cc  0%,  #009999 89%);
+      background: linear-gradient(to right, #6600cc 0%, #009999 89%);
       color: white;
     }
   }
@@ -38,13 +39,11 @@ const ButtonHeader = styled.div`
     background-color: #6600cc;
     border: none;
     :hover {
-      background: linear-gradient(to right, #009999  0%, #6600cc 89%);
+      background: linear-gradient(to right, #009999 0%, #6600cc 89%);
       color: white;
     }
   }
-
 `;
-
 
 const Header = ({ rightButtonText, setRightButtonText }) => {
   const token = localStorage.getItem("token");
@@ -66,9 +65,9 @@ const Header = ({ rightButtonText, setRightButtonText }) => {
   return (
     <ContainerHeader>
       <ButtonHeader>
-      <Button onClick={() => goToFeed(history)}>
-        <h1>LabEddit</h1>
-      </Button>
+        <Button onClick={() => goToFeed(history)}>
+          <h1>LabEddit</h1>
+        </Button>
       </ButtonHeader>
       <Button onClick={rightButtonAction}>{rightButtonText}</Button>
     </ContainerHeader>

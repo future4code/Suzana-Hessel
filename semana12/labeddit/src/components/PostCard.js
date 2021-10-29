@@ -28,9 +28,9 @@ const PostCard = (props) => {
   });
 
   useEffect(() => {
-    onClickUp()
-    onClickDown()
-  })
+    onClickUp();
+    onClickDown();
+  });
 
   const onClickUp = () => {
     console.log({ voteSum, votes });
@@ -41,21 +41,17 @@ const PostCard = (props) => {
 
     createPostVote(body, id);
     setVotes((x) => {
-      console.log("X DO SET VOTES", x);
       return x + 1;
     });
   };
 
   const onClickDown = () => {
     const id = props.id;
-    console.log("ID", props.id);
     const body = {
       direction: -1,
     };
 
     if (votes > 0) {
-      console.log("VOTES", votes);
-      console.log("VOTESUM", voteSum);
       changePostVote(body, id);
       setVotes((x) => {
         return x - 1;

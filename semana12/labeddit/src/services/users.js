@@ -2,7 +2,6 @@ import { BASE_URL } from "../constants/urls";
 import axios from "axios";
 import { goToFeed, goToSignupFeed } from "../routes/coordinator";
 
-
 export const login = (body, clear, history, setRightButtonText) => {
   axios
     .post(`${BASE_URL}/users/login`, body)
@@ -13,7 +12,7 @@ export const login = (body, clear, history, setRightButtonText) => {
       setRightButtonText("Logout");
     })
     .catch((err) => {
-      console.error(err)
+      console.error(err);
     });
 };
 
@@ -26,10 +25,8 @@ export const signup = (body, clear, history) => {
       goToSignupFeed(history);
     })
     .catch((err) => {
-      console.log("Erro", err);
-      console.log("ERROOO", err.response.data)
-      alert("Erro no cadastro");
+      alert(
+        "Por favor, verifique se todos os requisitos da senha foram preenchidos corretamente "
+      );
     });
 };
-
-

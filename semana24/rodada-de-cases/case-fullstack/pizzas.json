@@ -1,0 +1,46 @@
+[
+    {
+      "nome" : " Margherita " ,
+      "preço" : 5 ,
+      "ingredientes" : [
+        " tomate " ,
+        " mussarela "
+      ]
+    },
+    {
+      "nome" : " Bufala " ,
+      "preço" : 6 ,
+      "ingredientes" : [
+        " tomate " ,
+        " mozarella di bufala "
+      ]
+    },
+    {
+      "nome" : " Romana " ,
+      "preço" : 5 ,
+      "ingredientes" : [
+        " tomate " ,
+        " mussarela " ,
+        " anchovas " ,
+        " orégano " ,
+        " óleo "
+      ]
+    },
+    {
+      "nome" : " Diavola " ,
+      "preço" : 7.5 ,
+      "ingredientes" : [
+        " tomate " ,
+        " mussarela " ,
+        " salame picante "
+      ]
+    },
+    {
+      "nome" : " Pizza Bianca " ,
+      "preço" : 5 ,
+      "ingredientes" : [
+        " mussarela " ,
+        " orégano "
+      ]
+    }
+  ]

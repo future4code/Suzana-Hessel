@@ -80,8 +80,17 @@ retornaObjetoEntreDoisNumeros(10, 3)
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+   const nNumerosPares = []
+   for(let i = 0; i < nNumerosPares.length < n; i++){
+       if(i % 2 === 0){
+           nNumerosPares.push(i)
+           console.log(nNumerosPares, "AQUI")
+
+       }
+   }
+   return nNumerosPares
 }
+console.log(retornaNPrimeirosPares(3))
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {

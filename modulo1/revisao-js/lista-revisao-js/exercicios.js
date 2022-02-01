@@ -57,8 +57,13 @@ retornaNumerosParesElevadosADois([1,2,3,4,5,6])
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+  const maiorNumArray = array.reduce(function(a, b){
+    return Math.max(a, b)
+  })
+  console.log(maiorNumArray)
+  return maiorNumArray
 }
+retornaMaiorNumero([2,50,10])
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {

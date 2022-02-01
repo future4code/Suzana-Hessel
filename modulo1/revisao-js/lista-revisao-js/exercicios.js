@@ -70,11 +70,11 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
     const maiorNumero = Math.max(num1, num2)
     const menorNumero = Math.min(num1, num2)
     const maiorDivisivelPorMenor = maiorNumero % menorNumero === 0 
-    const diferencaEntreOsNums = maiorNumero - menorNumero
+    const diferenca = maiorNumero - menorNumero
 
-    console.log( `Maior número: ${maiorNumero}, MaiorDivisivelporMenor: ${maiorDivisivelPorMenor},diferenca: ${diferencaEntreOsNums}`)
+    console.log( `Maior número: ${maiorNumero}, MaiorDivisivelporMenor: ${maiorDivisivelPorMenor},diferenca: ${diferenca}`)
 
-    return maiorNumero, maiorDivisivelPorMenor,diferencaEntreOsNums
+    return maiorNumero, maiorDivisivelPorMenor, diferenca
 }
 retornaObjetoEntreDoisNumeros(10, 3)
 

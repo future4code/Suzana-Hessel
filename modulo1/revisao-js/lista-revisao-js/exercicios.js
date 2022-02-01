@@ -79,23 +79,33 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 retornaObjetoEntreDoisNumeros(10, 3)
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {
-   const nNumerosPares = []
-   for(let i = 0; i < nNumerosPares.length < n; i++){
-       if(i % 2 === 0){
-           nNumerosPares.push(i)
-           console.log(nNumerosPares, "AQUI")
+// function retornaNPrimeirosPares(n) {
+//    const nNumerosPares = []
+//    for(let i = 0; i < nNumerosPares.length < n; i++){
+//        if(i % 2 === 0){
+//            nNumerosPares.push(i)
 
-       }
-   }
-   return nNumerosPares
-}
-console.log(retornaNPrimeirosPares(3))
+//        }
+//    }
+//    return nNumerosPares
+// }
+// console.log(retornaNPrimeirosPares(3))
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
+   
+    if((ladoA === ladoB) && (ladoB === ladoC)){
+        return `Equilátero`
+    }
+    else if(ladoA === ladoB != ladoC){
+        return "Isósceles"
+    }
+    else if(ladoA != ladoB != ladoC){
+        return "Escaleno"
+    }
 
 }
+console.log(classificaTriangulo(1,3,2))
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {

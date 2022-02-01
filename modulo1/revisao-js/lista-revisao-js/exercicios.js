@@ -13,8 +13,11 @@ retornaTamanhoArray(["Azul", "Amarelo", "Vermelho"])
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  
+  const inverteArray = array.reverse()
+  console.log(inverteArray)
+  return inverteArray
 }
+retornaArrayInvertido([1,2,5,8,7,10])
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {

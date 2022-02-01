@@ -43,8 +43,17 @@ retornaNumerosPares([1,2,3,4,6])
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+
+ const paresElevadosADois = []
+
+ for(i = 0; i < array.length; i++){
+     if(array[i] % 2 === 0) {
+         paresElevadosADois.push(array[i] ** 2)
+     }
+ }
+ return paresElevadosADois
 }
+retornaNumerosParesElevadosADois([1,2,3,4,5,6])
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {

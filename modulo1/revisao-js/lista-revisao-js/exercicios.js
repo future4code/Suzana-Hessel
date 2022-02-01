@@ -30,8 +30,16 @@ retornaArrayOrdenado([36,12,56,7,3])
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+  const numerosPares = []
+  for(i = 0; i < array.length; i++){
+      if(array[i] % 2 == 0){
+        numerosPares.push(array[i])
+      }
+  }
+  console.log(numerosPares)
+  return numerosPares
 }
+retornaNumerosPares([1,2,3,4,6])
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {

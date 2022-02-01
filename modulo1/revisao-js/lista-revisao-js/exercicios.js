@@ -21,8 +21,12 @@ retornaArrayInvertido([1,2,5,8,7,10])
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+    const ordenaArray = array.sort(function (a, b) {
+        return a - b })
+    console.log(ordenaArray)
+    return ordenaArray
 }
+retornaArrayOrdenado([36,12,56,7,3])
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {

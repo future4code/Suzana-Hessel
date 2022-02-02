@@ -109,8 +109,44 @@ console.log(classificaTriangulo(1,3,2))
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
-}
+    
+    let menor = Infinity
+      let maior = 0
+      let segundoMenor = Infinity
+      let segundoMaior = 0
+      let indiceMenor = 0
+      let indiceMaior = 0
+      let arrayDoisNumeros = []
+    
+      for(let i of array){
+        if(i < menor){
+          menor = i
+          indiceMenor = array.indexOf(menor)
+         }
+         if(i > maior){
+           maior = i
+           indiceMaior = array.indexOf(maior)
+    
+         }
+      }
+      array.splice(indiceMaior, 1)
+      array.splice(indiceMenor, 1)
+    
+      for(let i of array){
+        if(i < segundoMenor){
+          segundoMenor = i
+        }
+        if(i > segundoMaior){
+          segundoMaior = i
+        }
+      }
+      arrayDoisNumeros.push(`O segundo maior é: ${segundoMaior}`)
+      arrayDoisNumeros.push(`O segundo menor é: ${segundoMenor}`)
+      console.log(arrayDoisNumeros)
+    
+      return arrayDoisNumeros
+    }
+    retornaSegundoMaiorESegundoMenor([1,2,3,4,5,6,7])
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {

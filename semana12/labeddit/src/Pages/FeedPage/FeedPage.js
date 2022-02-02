@@ -4,17 +4,12 @@ import useForm from "../../hooks/useForm";
 import { BASE_URL, headers } from "../../constants/urls";
 import axios from "axios";
 import { TextField } from "@material-ui/core";
-import {
-  ContainerFeed,
-  ContainerPost,
-  ButtonPostar,
- 
-} from "./styled";
+import { ContainerFeed, ContainerPost, ButtonPostar } from "./styled";
 import { Button } from "@material-ui/core";
 import PostCard from "../../components/PostCard";
 import { createPost } from "../../services/posts";
 
-const FeedPage = () => {
+const FeedPage = (props) => {
   useProtectedPage();
   const [posts, setPosts] = useState([]);
   const { form, onChange, clear } = useForm({
@@ -44,9 +39,9 @@ const FeedPage = () => {
   };
 
   const onClickCreatePost = () => {
-  if(form.title === "" || form.body === ""){
-    return alert("É necessário o preenchimento dos campos")
-  }
+    if (form.title === "" || form.body === "") {
+      return alert("É necessário o preenchimento dos campos");
+    }
     createPost(form, clear);
   };
 
@@ -68,6 +63,7 @@ const FeedPage = () => {
   return (
     <ContainerFeed>
       <h2>Feed</h2>
+      <p>Olá!</p>
       <ContainerPost>
         <form onSubmit={onClickCreatePost}>
           <TextField

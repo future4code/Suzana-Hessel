@@ -14,7 +14,7 @@ const PostPage = (props) => {
     [],
     `${BASE_URL}/posts/${params.id}/comments`
   );
-  console.log("Comments", comments);
+
 
   const commentsCards = comments.map((comment) => {
     return <CommentCard comment={comment} />;

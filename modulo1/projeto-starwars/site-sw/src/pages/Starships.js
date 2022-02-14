@@ -7,7 +7,7 @@ import { StarshipsCard } from "../components/starships-cards";
 
 const StarshipsContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: 80vh;
   display: grid;
   grid-template-columns: repeat(5, 200px);
   grid-template-rows: repeat(6, 300px);
@@ -15,6 +15,8 @@ const StarshipsContainer = styled.div`
   row-gap: 10px;
   justify-content: center;
   padding-top: 5%;
+  background-color:#F56F36;
+
 `;
 
 export const StarshipsPage = () => {

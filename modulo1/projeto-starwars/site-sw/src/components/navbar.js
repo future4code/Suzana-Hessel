@@ -7,24 +7,23 @@ const NavbarStyled = styled.nav`
   display: flex;
   justify-items: center;
   justify-content: center;
+  background-color: #1f2738;
 
   > ul {
     display: flex;
     gap: 20px;
     list-style: none;
     align-items: center;
-   
-
+    font-size: 20px;
     > li {
       display: inline-block;
       padding: 16px;
-      border: 1px solid white;
       color: white;
       border-radius: 10px;
-      background-color: blueviolet;
+
       :hover {
         cursor: pointer;
-        color: orange;
+        color: #f56f36;
       }
     }
   }
@@ -36,9 +35,9 @@ export const Navbar = () => {
   return (
     <NavbarStyled>
       <ul>
-        <li onClick={() => navigation("/")}>Home</li>
-        <li onClick={() => navigation("/pilots")}>Pilots</li>
-        <li onClick={() => navigation("/starships")}>Starships</li>
+        <li onClick={() => navigation("/")}>HOME</li>
+        <li onClick={() => navigation("/pilots")}>PILOTS</li>
+        <li onClick={() => navigation("/starships")}>STARSHIPS</li>
       </ul>
     </NavbarStyled>
   );

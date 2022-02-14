@@ -18,7 +18,6 @@ export const ActionButton = styled.div`
   padding: 20px;
   border: 2px solid white;
   background-color: aliceblue;
-  border-radius: 20px;
   opacity: 50%;
   font-size: 20px;
   :hover {

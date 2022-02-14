@@ -4,11 +4,11 @@ import styled from "styled-components";
 const StarshipsCardContainer = styled.div`
   width: 140px;
   height: 250px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   justify-content: end;
+  
  
 `;
 
@@ -16,7 +16,7 @@ const StarshipCard = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
-  background: blueviolet;
+  background: #1F2738;
   color: white;
   border-radius:10px;
   img {

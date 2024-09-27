@@ -1,0 +1,28 @@
+export enum USER_ROLES {
+    NORMAL = "NORMAL",
+    ADMIN = "ADMIN",
+  }
+
+export interface User {
+    id: string
+    name: string
+    email: string
+    password: string,
+    role: USER_ROLES
+  }
+
+
+  export type authenticationData = {
+    id: string;
+    role: USER_ROLES;
+  };
+  
+//   export type user = {
+//     id: string;
+//     name: string;
+//     email: string;
+//     password: string;
+//     role: USER_ROLES;
+//   };
+  
+  export const usersTable = "labook_users";
